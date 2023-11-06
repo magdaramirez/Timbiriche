@@ -7,7 +7,7 @@ package org.itson.Dominio;
 
 /**
  *
- * @author koine
+ * @author Michell Cedano
  */
 public class Forma {
      private int width;

@@ -7,22 +7,22 @@ package org.itson.Dominio;
 
 /**
  *
- * @author koine
+ * @author Michell Cedano
  */
-public class CasillaJugador {
+public class CasillaJugador extends Forma{
         private Jugador jugador;
     private int indice;
 
-    public FormaJuego(int width, int height, int x, int y) {
+    public CasillaJugador(int width, int height, int x, int y) {
         super(width, height, x, y);
     }
 
-    public FormaJuego(Jugador jugador, int width, int height, int x, int y) {
+    public CasillaJugador(Jugador jugador, int width, int height, int x, int y) {
         super(width, height, x, y);
         this.jugador = jugador;
     }
 
-    public FormaJuego(Jugador jugador, int indice, int width, int height, int x, int y) {
+    public CasillaJugador(Jugador jugador, int indice, int width, int height, int x, int y) {
         super(width, height, x, y);
         this.jugador = jugador;
         this.indice = indice;

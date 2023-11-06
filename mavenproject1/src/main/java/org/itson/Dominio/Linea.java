@@ -7,9 +7,9 @@ package org.itson.Dominio;
 
 /**
  *
- * @author koine
+ * @author Michell Cedano
  */
-public class Linea {
+public class Linea extends CasillaJugador{
     private Posicion posicion;
 
     public Linea(Posicion posicion, int indice, int width, int height, int x, int y) {

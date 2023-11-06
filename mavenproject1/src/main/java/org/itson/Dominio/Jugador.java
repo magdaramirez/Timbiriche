@@ -5,9 +5,11 @@
  */
 package org.itson.Dominio;
 
+import java.util.Objects;
+
 /**
  *
- * @author koine
+ * @author Michell Cedano
  */
 public class Jugador {
     private String nombre;

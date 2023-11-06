@@ -7,11 +7,13 @@ package org.itson.Dominio;
 
 /**
  *
- * @author koine
+ * @author Michell Cedano
  */
-public class Cuadro {
-     private Linea superior, inferior, izquierda, derecha;
-
+public class Cuadro extends CasillaJugador{
+     private Linea superior;
+     private Linea inferior;
+     private Linea izquierda;
+     private Linea derecha;
     public Cuadro(int indice) {
         super(null, indice, 0, 0, 0, 0);
     }

@@ -5,9 +5,13 @@
  */
 package org.itson.Dominio;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  *
- * @author koine
+ * @author Michell Cedano
  */
 public class Marcador {
     private Jugador lider;

@@ -5,9 +5,12 @@
  */
 package org.itson.Dominio;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
- * @author koine
+ * @author Michell Cedano
  */
 public class Tablero {
     

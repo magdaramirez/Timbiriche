@@ -7,7 +7,7 @@ package org.itson.Dominio;
 
 /**
  *
- * @author koine
+ * @author Michell Cedano
  */
 public class Partida {
     private Tablero tablero;
@@ -17,7 +17,7 @@ public class Partida {
     /**
      * 
      */
-    public Sala() {
+    public Partida() {
     }
 
     /**
@@ -26,7 +26,7 @@ public class Partida {
      * @param tablero
      * @param tamanio 
      */
-    public Sala(Marcador marcador, Tablero tablero, int tamanio) {
+    public Partida(Marcador marcador, Tablero tablero, int tamanio) {
         this.tablero = tablero;
         this.marcador = marcador;
         this.tamanio = tamanio;
