@@ -27,14 +27,9 @@ public class SckServerProtocol {
 
     public Object procesarEntrada(Object mensajeEntrante) {
 
-        //Si despues de realizada la conexion, el socket del cliente manda los
-        //datos del jugador, le avisa al Thread que efectivamente son los datos
         if (mensajeEntrante instanceof JugadorSTK) {
             return MensSocket.JUGADOR_NUEVO;
 
-            //Si se reciben los datos de un MovimientoDTO, se manda al componente 
-            //PipesAndFilters para realizar la conversion correspondiente, asignar 
-            //y obtener respuesta
         } else if (mensajeEntrante instanceof MovimientoSTK) {
             MovimientoSTK movimiento = (MovimientoSTK) mensajeEntrante;
             
@@ -49,7 +44,6 @@ public class SckServerProtocol {
             RespuestaSTK respuesta = new RespuestaSTK(movimiento, rep.obtenerMarcador());
             return respuesta;
             
-            //Si un cliente vota, se verifica y se manda respuesta
         } else if (mensajeEntrante == MensSocket.VOTO) {
             return MensSocket.VOTO;
         } else if (mensajeEntrante == MensSocket.TURNO_TERMINADO) {
