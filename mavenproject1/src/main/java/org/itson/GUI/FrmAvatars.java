@@ -38,7 +38,7 @@ public class FrmAvatars extends javax.swing.JFrame {
     }
 
     /**
-     * Método que despliega FrmSalaJuego
+     * Método que despliega FrmSala
      */
     public void regresarVentanaSalaJuego() {
         FrmSalaJuego frmSalaJuego = new FrmSalaJuego();
@@ -192,6 +192,11 @@ public class FrmAvatars extends javax.swing.JFrame {
 
         btnListo.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnListo.setText("Listo");
+        btnListo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListoActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnListo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 110, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 510));
@@ -223,6 +228,10 @@ public class FrmAvatars extends javax.swing.JFrame {
     private void pnlRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRegresarMouseClicked
     regresarVentanaSalaJuego();
     }//GEN-LAST:event_pnlRegresarMouseClicked
+
+    private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnListoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCangrejo;

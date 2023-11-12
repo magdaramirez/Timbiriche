@@ -171,7 +171,9 @@ public class FrmInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlSalirMouseClicked
 
     private void btnCrearPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearPartidaActionPerformed
-        // TODO add your handling code here:
+        FrmSalaJuego sala = new FrmSalaJuego();
+        sala.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnCrearPartidaActionPerformed
 
     private void btnUnirsePartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnirsePartidaActionPerformed

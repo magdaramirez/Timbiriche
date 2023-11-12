@@ -15,6 +15,7 @@ public class FrmTablero extends javax.swing.JFrame {
      */
     public FrmTablero() {
         initComponents();
+        this.setSize(1000, 698);
     }
 
     /**
@@ -26,21 +27,153 @@ public class FrmTablero extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        pnlFondoTablero = new javax.swing.JPanel();
+        pnlJugador1 = new javax.swing.JPanel();
+        pnlJugador2 = new javax.swing.JPanel();
+        pnlJugador4 = new javax.swing.JPanel();
+        pnlJuagdor3 = new javax.swing.JPanel();
+        btnSalir = new javax.swing.JButton();
+        btnColores = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(988, 660));
+        setMinimumSize(new java.awt.Dimension(988, 660));
+        setPreferredSize(new java.awt.Dimension(988, 660));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(980, 660));
+        jPanel1.setMinimumSize(new java.awt.Dimension(980, 660));
+        jPanel1.setPreferredSize(new java.awt.Dimension(988, 660));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlFondoTablero.setBackground(new java.awt.Color(255, 255, 255));
+        pnlFondoTablero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlFondoTablero.setMaximumSize(new java.awt.Dimension(650, 650));
+        pnlFondoTablero.setMinimumSize(new java.awt.Dimension(650, 650));
+        pnlFondoTablero.setPreferredSize(new java.awt.Dimension(650, 650));
+
+        javax.swing.GroupLayout pnlFondoTableroLayout = new javax.swing.GroupLayout(pnlFondoTablero);
+        pnlFondoTablero.setLayout(pnlFondoTableroLayout);
+        pnlFondoTableroLayout.setHorizontalGroup(
+            pnlFondoTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 648, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        pnlFondoTableroLayout.setVerticalGroup(
+            pnlFondoTableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 648, Short.MAX_VALUE)
         );
+
+        jPanel1.add(pnlFondoTablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 6, -1, -1));
+
+        pnlJugador1.setBackground(new java.awt.Color(255, 255, 255));
+        pnlJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador1.setMaximumSize(new java.awt.Dimension(150, 142));
+        pnlJugador1.setMinimumSize(new java.awt.Dimension(150, 142));
+        pnlJugador1.setPreferredSize(new java.awt.Dimension(150, 142));
+
+        javax.swing.GroupLayout pnlJugador1Layout = new javax.swing.GroupLayout(pnlJugador1);
+        pnlJugador1.setLayout(pnlJugador1Layout);
+        pnlJugador1Layout.setHorizontalGroup(
+            pnlJugador1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        pnlJugador1Layout.setVerticalGroup(
+            pnlJugador1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 140, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(pnlJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+
+        pnlJugador2.setBackground(new java.awt.Color(255, 255, 255));
+        pnlJugador2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador2.setMaximumSize(new java.awt.Dimension(150, 142));
+        pnlJugador2.setMinimumSize(new java.awt.Dimension(150, 142));
+
+        javax.swing.GroupLayout pnlJugador2Layout = new javax.swing.GroupLayout(pnlJugador2);
+        pnlJugador2.setLayout(pnlJugador2Layout);
+        pnlJugador2Layout.setHorizontalGroup(
+            pnlJugador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 148, Short.MAX_VALUE)
+        );
+        pnlJugador2Layout.setVerticalGroup(
+            pnlJugador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 140, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(pnlJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 514, -1, -1));
+
+        pnlJugador4.setBackground(new java.awt.Color(255, 255, 255));
+        pnlJugador4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador4.setMaximumSize(new java.awt.Dimension(150, 142));
+        pnlJugador4.setMinimumSize(new java.awt.Dimension(150, 142));
+
+        javax.swing.GroupLayout pnlJugador4Layout = new javax.swing.GroupLayout(pnlJugador4);
+        pnlJugador4.setLayout(pnlJugador4Layout);
+        pnlJugador4Layout.setHorizontalGroup(
+            pnlJugador4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 148, Short.MAX_VALUE)
+        );
+        pnlJugador4Layout.setVerticalGroup(
+            pnlJugador4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 140, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(pnlJugador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(832, 514, -1, -1));
+
+        pnlJuagdor3.setBackground(new java.awt.Color(255, 255, 255));
+        pnlJuagdor3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJuagdor3.setMaximumSize(new java.awt.Dimension(150, 142));
+        pnlJuagdor3.setMinimumSize(new java.awt.Dimension(150, 142));
+        pnlJuagdor3.setPreferredSize(new java.awt.Dimension(150, 142));
+
+        javax.swing.GroupLayout pnlJuagdor3Layout = new javax.swing.GroupLayout(pnlJuagdor3);
+        pnlJuagdor3.setLayout(pnlJuagdor3Layout);
+        pnlJuagdor3Layout.setHorizontalGroup(
+            pnlJuagdor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        pnlJuagdor3Layout.setVerticalGroup(
+            pnlJuagdor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 140, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(pnlJuagdor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(832, 6, -1, -1));
+
+        btnSalir.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnSalir.setText("Salir");
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 99, 57));
+
+        btnColores.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnColores.setText("Colores");
+        btnColores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColoresActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnColores, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 300, 99, 55));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnColoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColoresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnColoresActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnColores;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel pnlFondoTablero;
+    private javax.swing.JPanel pnlJuagdor3;
+    private javax.swing.JPanel pnlJugador1;
+    private javax.swing.JPanel pnlJugador2;
+    private javax.swing.JPanel pnlJugador4;
     // End of variables declaration//GEN-END:variables
 }

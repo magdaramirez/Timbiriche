@@ -38,7 +38,7 @@ public class FrmColor extends javax.swing.JFrame {
     }
 
     /**
-     * Método que despliega FrmSalaJuego
+     * Método que despliega FrmSala
      */
     public void regresarVentanaSalaJuego() {
         FrmSalaJuego frmSalaJuego = new FrmSalaJuego();
@@ -178,6 +178,11 @@ public class FrmColor extends javax.swing.JFrame {
 
         btnListo.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnListo.setText("Listo");
+        btnListo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -265,6 +270,10 @@ public class FrmColor extends javax.swing.JFrame {
     private void pnlSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlSalirMouseExited
         cambiarColorPanel(pnlSalir, Color.WHITE);
     }//GEN-LAST:event_pnlSalirMouseExited
+
+    private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnListoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAmarillo;
