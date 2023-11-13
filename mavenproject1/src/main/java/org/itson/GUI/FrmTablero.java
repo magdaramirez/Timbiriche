@@ -39,7 +39,6 @@ public class FrmTablero extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(988, 660));
         setMinimumSize(new java.awt.Dimension(988, 660));
-        setPreferredSize(new java.awt.Dimension(988, 660));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
