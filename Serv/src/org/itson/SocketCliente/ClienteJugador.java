@@ -5,6 +5,7 @@
  */
 package org.itson.SocketCliente;
 
+import org.itson.DominioSTK.MsjSocket;
 import java.io.IOException;
 import java.util.List;
 import org.itson.Dominio.*;

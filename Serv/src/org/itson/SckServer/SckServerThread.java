@@ -13,10 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.itson.DominioSTK.JugadorSTK;
-import org.itson.DominioSTK.MarcadorSTK;
-import org.itson.DominioSTK.MensSocket;
-import org.itson.DominioSTK.RespuestaSTK;
+import org.itson.DominioSTK.*;
 
 /**
  *
@@ -56,7 +53,7 @@ public class SckServerThread implements Runnable{
                 Object mensajeSaliente = ssp.procesarEntrada(mensajeEntrante);
 
                 
-                if (mensajeSaliente == MensSocket.JUGADOR_NUEVO) {
+                if (mensajeSaliente == MsjSocket.JUGADOR_NUEVO) {
                     System.out.println("Entro jugador: " + mensajeEntrante);
                     this.jugadorSTK = (JugadorSTK) mensajeEntrante;
 
@@ -75,7 +72,7 @@ public class SckServerThread implements Runnable{
                     }
 
                     
-                } else if (mensajeSaliente == MensSocket.VOTO) {
+                } else if (mensajeSaliente == MsjSocket.VOTO) {
                     
                     if (this.votado == false) {
                         this.votado = true;

@@ -28,7 +28,7 @@ public class SckServerProtocol {
     public Object procesarEntrada(Object mensajeEntrante) {
 
         if (mensajeEntrante instanceof JugadorSTK) {
-            return MensSocket.JUGADOR_NUEVO;
+            return MsjSocket.JUGADOR_NUEVO;
 
         } else if (mensajeEntrante instanceof MovimientoSTK) {
             MovimientoSTK movimiento = (MovimientoSTK) mensajeEntrante;
@@ -44,11 +44,11 @@ public class SckServerProtocol {
             RespuestaSTK respuesta = new RespuestaSTK(movimiento, rep.obtenerMarcador());
             return respuesta;
             
-        } else if (mensajeEntrante == MensSocket.VOTO) {
-            return MensSocket.VOTO;
-        } else if (mensajeEntrante == MensSocket.TURNO_TERMINADO) {
+        } else if (mensajeEntrante == MsjSocket.VOTO) {
+            return MsjSocket.VOTO;
+        } else if (mensajeEntrante == MsjSocket.TURNO_TERMINADO) {
             return rep.obtenerTurnoSiguiente();
-        } else if (mensajeEntrante == MensSocket.MARCADOR) {
+        } else if (mensajeEntrante == MsjSocket.MARCADOR) {
             return rep.obtenerMarcador();
         }
         return null;
