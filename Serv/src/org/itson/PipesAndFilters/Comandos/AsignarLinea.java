@@ -6,6 +6,7 @@
 package org.itson.PipesAndFilters.Comandos;
 
 import org.itson.DominioSTK.LineaSTK;
+import org.itson.PipesAndFilters.Pipas.PipaLineasSTK;
 
 /**
  *
@@ -20,6 +21,7 @@ public class AsignarLinea implements IJuegoPipa{
 
     @Override
     public void ejecutar() {
-        
+        PipaLineasSTK pl = new PipaLineasSTK();
+        pl.pasar(linea);
     }    
 }

@@ -5,10 +5,7 @@
  */
 package org.itson.PipesAndFilters.Comandos;
 
-import org.itson.PipesAndFilters.Comandos.IJuegoPipa;
-import org.itson.PipesAndFilters.Comandos.AsignarLinea;
-import org.itson.PipesAndFilters.Comandos.CrearJuegoPanel;
-import org.itson.PipesAndFilters.Comandos.AsignarCuadro;
+import org.itson.PipesAndFilters.Comandos.*;
 import java.util.List;
 import org.itson.DominioSTK.*;
 import org.itson.PipesAndFilters.IJuego;

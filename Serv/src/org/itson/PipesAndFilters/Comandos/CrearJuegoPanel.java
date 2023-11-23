@@ -7,6 +7,7 @@ package org.itson.PipesAndFilters.Comandos;
 
 import java.util.List;
 import org.itson.DominioSTK.JugadorSTK;
+import org.itson.PipesAndFilters.Pipas.*;
 
 /**
  *
@@ -21,6 +22,9 @@ public class CrearJuegoPanel implements IJuegoPipa{
     
     @Override
     public void ejecutar() {
-        
+        PipaJugadoresSTK pj = new PipaJugadoresSTK();
+        pj.pasar(jugadores);
+        PipaSize pt = new PipaSize();
+        pt.pasar(jugadores.size());
     }
 }

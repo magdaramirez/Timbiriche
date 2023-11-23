@@ -49,24 +49,24 @@ public class SckServerThread implements Runnable{
         while (true) {
             try {
 
-                //Lee entrada
+                
                 mensajeEntrante = input.readObject();
 
-                //La procesa el protocolo
+                
                 Object mensajeSaliente = ssp.procesarEntrada(mensajeEntrante);
 
-                //Si el jugador es nuevo
+                
                 if (mensajeSaliente == MensSocket.JUGADOR_NUEVO) {
                     System.out.println("Entro jugador: " + mensajeEntrante);
                     this.jugadorSTK = (JugadorSTK) mensajeEntrante;
 
-                    //Crea una lista de Jugadores
+                    
                     List<JugadorSTK> jugadores = new ArrayList<>();
                     for (SckServerThread thread : threads) {
                         jugadores.add(thread.getJugadorDTO());
                     }
 
-                    //La transmite a todos para actualizar
+                    
                     transmitirATodos(jugadores);
 
                     if (threads.size() == MAX) {
@@ -74,19 +74,19 @@ public class SckServerThread implements Runnable{
                         transmitirATodos(empezarPartida);
                     }
 
-                    //Si es un voto
+                    
                 } else if (mensajeSaliente == MensSocket.VOTO) {
-                    //Si no voto
+                    
                     if (this.votado == false) {
                         this.votado = true;
                         mensajeSaliente = this.jugadorSTK.getNombreJugador() + " ha votado";
-                        //Si ya habia votado
+                        
                     } else {
                         this.votado = false;
                         mensajeSaliente = this.jugadorSTK.getNombreJugador() + " ha cancelado el voto";
                     }
 
-                    //Retorna accion
+                    
                     transmitirATodos(mensajeSaliente);
                 } else if (mensajeSaliente instanceof MarcadorSTK) {
                     transmitirATodos(mensajeSaliente);

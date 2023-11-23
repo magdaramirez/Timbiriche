@@ -6,6 +6,7 @@
 package org.itson.PipesAndFilters.Comandos;
 
 import org.itson.DominioSTK.JugadorSTK;
+import org.itson.PipesAndFilters.Pipas.PipaJugadorSTK;
 
 /**
  *
@@ -20,6 +21,7 @@ public class RetirarJugador implements IJuegoPipa{
 
     @Override
     public void ejecutar() {
-        
+        PipaJugadorSTK pj = new PipaJugadorSTK();
+        pj.pasar(jugador);
     }
 }
