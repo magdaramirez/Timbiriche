@@ -4,20 +4,156 @@
  */
 package org.itson.GUI;
 
+import org.itson.Dominio.Cuadro;
+import org.itson.Dominio.CasillaJugador;
+import org.itson.Dominio.Jugador;
+import org.itson.Dominio.Linea;
+import org.itson.Dominio.Marcador;
+import org.itson.Dominio.Partida;
+import org.itson.Dominio.Tablero;
+import java.util.List;
+import org.itson.Interfaces.IActualizable;
+import org.itson.SckCliente.Cliente;
+import org.itson.Interfaces.ICliente;
+import org.itson.Interfaces.PnlObservador;
+
 /**
  *
- * @author magda
+ * @author march
  */
-public class FrmTablero extends javax.swing.JFrame {
+public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IActualizable{
+    
+    /**
+     * Instancia de partida que cambia dentro de un hilo.
+     */
+    private Partida partida;
 
+    private Jugador jugador;
+
+    private ICliente sck;
+
+    private PnlTablero pnlTablero;
+    
     /**
      * Creates new form FrmTablero
      */
-    public FrmTablero() {
+    public FrmTablero(Marcador marcador, Jugador jugador) {
+        this.jugador = jugador;
         initComponents();
-        this.setSize(1000, 698);
+        this.setTitle("Sala de juego - " + jugador.getNombre());
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+
+        this.sck = new Cliente(this.jugador, this);
+
+        //Inicializar Sala
+        Tablero tablero = new Tablero(marcador.getJugadores().size());
+        this.partida = new Partida(marcador, tablero, marcador.getJugadores().size());
+        System.out.println(this.partida.toString());
+
+        establecerColores();
+        establecerMarcador();
+        establecerTablero();
+    }
+    
+    private void establecerColores() {
+        int index = this.partida.getMarcador().getJugadores().indexOf(this.jugador);
+        this.partida.getMarcador().getJugadores().get(index).setColor(this.jugador.getColor());
+
+        int indicador = 0;
+        for (int i = 0; i < this.partida.getMarcador().getJugadores().size(); i++) {
+            if (!this.partida.getMarcador().getJugadores().get(i).equals(this.jugador)) {
+                this.partida.getMarcador().getJugadores().get(i).setColor(this.jugador.getPreferencia().getColores().get(indicador));
+                indicador++;
+            }
+        }
     }
 
+    private void establecerMarcador() {
+        for (int i = 0; i < this.partida.getMarcador().getJugadores().size(); i++) {
+            switch (i) {
+                case 0:
+                    pnlJugador1.add(new PnlJugador(this.partida.getMarcador().getJugadores().get(i)));
+                    pnlJugador1.revalidate();
+                    break;
+                case 1:
+                    pnlJugador2.add(new PnlJugador(this.partida.getMarcador().getJugadores().get(i)));
+                    pnlJugador2.revalidate();
+                    break;
+                case 2:
+                    pnlJugador3.add(new PnlJugador(this.partida.getMarcador().getJugadores().get(i)));
+                    pnlJugador3.revalidate();
+                    break;
+                case 3:
+                    pnlJugador4.add(new PnlJugador(this.partida.getMarcador().getJugadores().get(i)));
+                    pnlJugador4.revalidate();
+                    break;
+                default:
+                    break;
+            }
+
+            this.validate();
+
+        }
+    }
+
+    private void actualizarMarcador(Marcador marcador) {
+        for (int i = 0; i < this.partida.getMarcador().getJugadores().size(); i++) {
+            switch (i) {
+                case 0:
+                    ((PnlJugador) pnlJugador1.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
+                    pnlJugador1.revalidate();
+                    break;
+                case 1:
+                    ((PnlJugador) pnlJugador2.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
+                    pnlJugador2.revalidate();
+                    break;
+                case 2:
+                    ((PnlJugador) pnlJugador3.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
+                    pnlJugador3.revalidate();
+                    break;
+                case 3:
+                    ((PnlJugador) pnlJugador4.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
+                    pnlJugador4.revalidate();
+                    break;
+                default:
+                    break;
+            }
+
+            this.validate();
+        }
+    }
+
+    private void establecerTablero() {
+        this.pnlTablero = new PnlTablero(this.partida.getTablero(), jugador);
+        pnlTablero.agrega(this);
+
+        pnlTablero.setSize(this.pnlFondoTablero.getSize());
+        pnlTablero.setBorder(this.pnlFondoTablero.getBorder());
+        this.pnlFondoTablero.add(pnlTablero);
+        pnlTablero.estableceTablero();
+        pnlTablero.setVisible(true);
+        pnlTablero.repaint();
+    }
+
+    /**
+     * Retorna la partida que se esta trabajando.
+     *
+     * @return
+     */
+    public Partida getSala() {
+        return partida;
+    }
+
+    /**
+     * Establece la partida de trabajo.
+     *
+     * @param partida
+     */
+    public void setSala(Partida partida) {
+        this.partida = partida;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,7 +168,7 @@ public class FrmTablero extends javax.swing.JFrame {
         pnlJugador1 = new javax.swing.JPanel();
         pnlJugador2 = new javax.swing.JPanel();
         pnlJugador4 = new javax.swing.JPanel();
-        pnlJuagdor3 = new javax.swing.JPanel();
+        pnlJugador3 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         btnColores = new javax.swing.JButton();
 
@@ -123,24 +259,24 @@ public class FrmTablero extends javax.swing.JFrame {
 
         jPanel1.add(pnlJugador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(832, 514, -1, -1));
 
-        pnlJuagdor3.setBackground(new java.awt.Color(255, 255, 255));
-        pnlJuagdor3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pnlJuagdor3.setMaximumSize(new java.awt.Dimension(150, 142));
-        pnlJuagdor3.setMinimumSize(new java.awt.Dimension(150, 142));
-        pnlJuagdor3.setPreferredSize(new java.awt.Dimension(150, 142));
+        pnlJugador3.setBackground(new java.awt.Color(255, 255, 255));
+        pnlJugador3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador3.setMaximumSize(new java.awt.Dimension(150, 142));
+        pnlJugador3.setMinimumSize(new java.awt.Dimension(150, 142));
+        pnlJugador3.setPreferredSize(new java.awt.Dimension(150, 142));
 
-        javax.swing.GroupLayout pnlJuagdor3Layout = new javax.swing.GroupLayout(pnlJuagdor3);
-        pnlJuagdor3.setLayout(pnlJuagdor3Layout);
-        pnlJuagdor3Layout.setHorizontalGroup(
-            pnlJuagdor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlJugador3Layout = new javax.swing.GroupLayout(pnlJugador3);
+        pnlJugador3.setLayout(pnlJugador3Layout);
+        pnlJugador3Layout.setHorizontalGroup(
+            pnlJugador3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        pnlJuagdor3Layout.setVerticalGroup(
-            pnlJuagdor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlJugador3Layout.setVerticalGroup(
+            pnlJugador3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 140, Short.MAX_VALUE)
         );
 
-        jPanel1.add(pnlJuagdor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(832, 6, -1, -1));
+        jPanel1.add(pnlJugador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(832, 6, -1, -1));
 
         btnSalir.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnSalir.setText("Salir");
@@ -170,9 +306,44 @@ public class FrmTablero extends javax.swing.JFrame {
     private javax.swing.JButton btnSalir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel pnlFondoTablero;
-    private javax.swing.JPanel pnlJuagdor3;
     private javax.swing.JPanel pnlJugador1;
     private javax.swing.JPanel pnlJugador2;
+    private javax.swing.JPanel pnlJugador3;
     private javax.swing.JPanel pnlJugador4;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actualizaDeSocket(Object mensaje) {
+        if (mensaje instanceof Marcador) {
+            System.out.println("Actualizando marcador");
+            Marcador marcador = (Marcador) mensaje;
+            actualizarMarcador((Marcador) mensaje);
+
+            for (int i = 0; i < marcador.getJugadores().size(); i++) {
+                if (marcador.getJugadores().indexOf(this.jugador) == marcador.getSiguiente()) {
+                    this.pnlTablero.actualizaTurno(true);
+                }
+            }
+        } else if (mensaje instanceof List) {
+            List<CasillaJugador> formas = (List<CasillaJugador>) mensaje;
+
+            for (int i = 0; i < formas.size(); i++) {
+                for (Jugador jugador : this.partida.getMarcador().getJugadores()) {
+                    if (jugador.equals(formas.get(i).getJugador())) {
+                        formas.get(i).setJugador(jugador);
+                        if (i == 0) {
+                            this.pnlTablero.actualizaLineaTablero((Linea) formas.get(i));
+                        } else {
+                            this.pnlTablero.actualizaCuadroTablero((Cuadro) formas.get(i));
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @Override
+    public void actualiza(List<CasillaJugador> movimiento) {
+        sck.enviarAlServidor(movimiento);
+    }
 }

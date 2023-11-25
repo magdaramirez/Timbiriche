@@ -5,21 +5,45 @@
 package org.itson.GUI;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import org.itson.Dominio.Jugador;
 
 /**
  *
  * @author magda
  */
 public class FrmInicio extends javax.swing.JFrame {
-
+    
+    /**
+     * Instancia de si mismo.
+     */
+    private static FrmInicio instance;
+    
     /**
      * Creates new form FrmInicio
      */
     public FrmInicio() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        this.setTitle("Timbiriche.");
+        
     }
-
+    
+    /**
+     * Metodo estatico que regresa la instancia de MenuInicial. Si la instancia
+     * es nula, la inicializa.
+     *
+     * @return
+     */
+    public static FrmInicio getInstance() {
+        if (instance == null) {
+            instance = new FrmInicio();
+        }
+        return instance;
+    }
+    
     /**
      * Método que establece el color del fondo de un JPanel.
      *
@@ -171,9 +195,21 @@ public class FrmInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlSalirMouseClicked
 
     private void btnCrearPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearPartidaActionPerformed
-        FrmSalaJuego sala = new FrmSalaJuego();
-        sala.setVisible(true);
-        dispose();
+        String ip = null, port = null;
+
+        ip = JOptionPane.showInputDialog(this, "Dirección IP", "¿A donde te quieres conectar?", JOptionPane.OK_CANCEL_OPTION);
+        port = JOptionPane.showInputDialog(this, "Puerto", "¿A donde quieres llegar?", JOptionPane.OK_CANCEL_OPTION);
+        
+        Jugador jugador = new Jugador("Jugador 1", "perro.png");
+        
+        FrmSalaJuego salaJuego = FrmSalaJuego.getInstance();
+        if(salaJuego.ejecutarConexion(jugador, ip, Integer.valueOf(port))){
+            salaJuego.setVisible(true);
+            this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(this,"No se pudo realizar la conexión con el servidor", "Fallo de Conexión", JOptionPane.ERROR_MESSAGE);
+            salaJuego = null;
+        }
     }//GEN-LAST:event_btnCrearPartidaActionPerformed
 
     private void btnUnirsePartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnirsePartidaActionPerformed
