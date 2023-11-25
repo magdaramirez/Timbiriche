@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.itson.DominioDTO;
+package org.itson.DominioSTK;
 
 import java.io.Serializable;
 
 /**
  *
- * @author march
+ * @author koine
  */
-public class CuadroDTO implements Serializable{
-
+public class CuadroSTK implements Serializable{
     private int indice;
-    private JugadorDTO jugador;
+    private JugadorSTK jugador;
 
-    public CuadroDTO(int indice, JugadorDTO jugador) {
+    public CuadroSTK(int indice, JugadorSTK jugador) {
         this.indice = indice;
         this.jugador = jugador;
     }
@@ -29,11 +28,11 @@ public class CuadroDTO implements Serializable{
         this.indice = indice;
     }
 
-    public JugadorDTO getJugador() {
+    public JugadorSTK getJugador() {
         return jugador;
     }
 
-    public void setJugador(JugadorDTO jugador) {
+    public void setJugador(JugadorSTK jugador) {
         this.jugador = jugador;
     }
 
@@ -55,7 +54,7 @@ public class CuadroDTO implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final CuadroDTO other = (CuadroDTO) obj;
+        final CuadroSTK other = (CuadroSTK) obj;
         if (this.indice != other.indice) {
             return false;
         }
@@ -64,6 +63,6 @@ public class CuadroDTO implements Serializable{
 
     @Override
     public String toString() {
-        return "CuadroDTO{" + indice + ", " + jugador + ")";
+        return "CuadroSTK{" + indice + ", " + jugador + ")";
     }
 }

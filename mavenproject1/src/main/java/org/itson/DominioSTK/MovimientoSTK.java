@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.itson.DominioDTO;
+package org.itson.DominioSTK;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -12,30 +12,29 @@ import java.util.Objects;
 
 /**
  *
- * @author march
+ * @author koine
  */
-public class MovimientoDTO implements Serializable{
+public class MovimientoSTK implements Serializable{
+    private LineaSTK linea;
+    private List<CuadroSTK> cuadros = new ArrayList<>();
 
-    private LineaDTO linea;
-    private List<CuadroDTO> cuadros = new ArrayList<>();
-
-    public LineaDTO getLinea() {
+    public LineaSTK getLinea() {
         return linea;
     }
 
-    public void setLinea(LineaDTO linea) {
+    public void setLinea(LineaSTK linea) {
         this.linea = linea;
     }
 
-    public List<CuadroDTO> getCuadros() {
+    public List<CuadroSTK> getCuadros() {
         return cuadros;
     }
 
-    public void setCuadros(List<CuadroDTO> cuadros) {
+    public void setCuadros(List<CuadroSTK> cuadros) {
         this.cuadros = cuadros;
     }
 
-    public void setCuadro(CuadroDTO cuadro) {
+    public void setCuadro(CuadroSTK cuadro) {
         if(cuadros.size() < 2){
             cuadros.add(cuadro);
         }else{
@@ -63,7 +62,7 @@ public class MovimientoDTO implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final MovimientoDTO other = (MovimientoDTO) obj;
+        final MovimientoSTK other = (MovimientoSTK) obj;
         if (!Objects.equals(this.linea, other.linea)) {
             return false;
         }

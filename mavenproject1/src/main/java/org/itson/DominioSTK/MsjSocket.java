@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.itson.DominioDTO;
+package org.itson.DominioSTK;
 
 import java.io.Serializable;
 
 /**
  *
- * @author march
+ * @author Michell Cedano
  */
-public enum MensajeSockets implements Serializable {
+public enum MsjSocket implements Serializable{
     VOTO, CREAR_SALA, EMPEZAR_PARTIDA, JUGADOR_NUEVO, TURNO_TERMINADO, MARCADOR
 }

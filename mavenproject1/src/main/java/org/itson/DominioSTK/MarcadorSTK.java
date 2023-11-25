@@ -3,34 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.itson.DominioDTO;
+package org.itson.DominioSTK;
 
 import java.io.Serializable;
 import java.util.List;
 
 /**
  *
- * @author march
+ * @author koine
  */
-public class MarcadorDTO implements Serializable{
-    private List<JugadorDTO> jugadores;
+public class MarcadorSTK implements Serializable{
+    private List<JugadorSTK> jugadores;
     private int siguiente;
 
-    public MarcadorDTO(List<JugadorDTO> jugadores) {
+    public MarcadorSTK(List<JugadorSTK> jugadores) {
         this.jugadores = jugadores;
         this.siguiente = 0;
     }
 
-    public MarcadorDTO(List<JugadorDTO> jugadores, int siguiente) {
+    public MarcadorSTK(List<JugadorSTK> jugadores, int siguiente) {
         this.jugadores = jugadores;
         this.siguiente = siguiente;
     }
 
-    public List<JugadorDTO> getJugadores() {
+    public List<JugadorSTK> getJugadores() {
         return jugadores;
     }
 
-    public void setJugadores(List<JugadorDTO> jugadores) {
+    public void setJugadores(List<JugadorSTK> jugadores) {
         this.jugadores = jugadores;
     }
 
@@ -44,6 +44,6 @@ public class MarcadorDTO implements Serializable{
 
     @Override
     public String toString() {
-        return "MarcadorDTO{" + "jugadores=" + jugadores + ", siguiente=" + siguiente + '}';
+        return "MarcadorSTK{" + "jugadores=" + jugadores + ", siguiente=" + siguiente + '}';
     }
 }

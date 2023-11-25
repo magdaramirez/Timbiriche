@@ -12,7 +12,7 @@ import org.itson.Dominio.Marcador;
 import org.itson.Dominio.Partida;
 import org.itson.Dominio.Tablero;
 import java.util.List;
-import org.itson.Interfaces.IActualizable;
+import org.itson.Interfaces.IActu;
 import org.itson.SckCliente.Cliente;
 import org.itson.Interfaces.ICliente;
 import org.itson.Interfaces.PnlObservador;
@@ -21,7 +21,7 @@ import org.itson.Interfaces.PnlObservador;
  *
  * @author march
  */
-public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IActualizable{
+public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IActu{
     
     /**
      * Instancia de partida que cambia dentro de un hilo.
@@ -313,7 +313,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void actualizaDeSocket(Object mensaje) {
+    public void actualizaSocket(Object mensaje) {
         if (mensaje instanceof Marcador) {
             System.out.println("Actualizando marcador");
             Marcador marcador = (Marcador) mensaje;

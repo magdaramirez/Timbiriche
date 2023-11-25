@@ -1,30 +1,28 @@
-package org.itson.DominioDTO;
-
-
-import java.io.Serializable;
-import java.util.Objects;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package org.itson.DominioSTK;
+
+import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
- * @author march
+ * @author koine
  */
-public class LineaDTO implements Serializable{
+public class LineaSTK implements Serializable{
     private String posicion;
     private int indice;
-    private JugadorDTO jugador;
+    private JugadorSTK jugador;
 
-    public LineaDTO(String posicion, int indice) {
+    public LineaSTK(String posicion, int indice) {
         this.posicion = posicion;
         this.indice = indice;
     }
 
-    public LineaDTO(String posicion, int indice, JugadorDTO jugador) {
+    public LineaSTK(String posicion, int indice, JugadorSTK jugador) {
         this.posicion = posicion;
         this.indice = indice;
         this.jugador = jugador;
@@ -46,11 +44,11 @@ public class LineaDTO implements Serializable{
         this.indice = indice;
     }
 
-    public JugadorDTO getJugador() {
+    public JugadorSTK getJugador() {
         return jugador;
     }
 
-    public void setJugador(JugadorDTO jugador) {
+    public void setJugador(JugadorSTK jugador) {
         this.jugador = jugador;
     }
 
@@ -73,7 +71,7 @@ public class LineaDTO implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final LineaDTO other = (LineaDTO) obj;
+        final LineaSTK other = (LineaSTK) obj;
         if (this.indice != other.indice) {
             return false;
         }
@@ -85,6 +83,6 @@ public class LineaDTO implements Serializable{
 
     @Override
     public String toString() {
-        return "LineaDTO{" + posicion + ", " + indice + ", " + jugador + ")";
+        return "LineaSTK{" + posicion + ", " + indice + ", " + jugador + ")";
     }
 }

@@ -3,21 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.itson.SckCliente;
+package org.itson.SocketCliente;
 
-import org.itson.Interfaces.IActualizable;
-import org.itson.Dominio.Cuadro;
-import org.itson.Dominio.CasillaJugador;
-import org.itson.Dominio.Jugador;
-import org.itson.Dominio.Linea;
-import org.itson.Dominio.Marcador;
-import org.itson.Dominio.Posicion;
-import org.itson.DominioDTO.CuadroDTO;
-import org.itson.DominioDTO.JugadorDTO;
-import org.itson.DominioDTO.LineaDTO;
-import org.itson.DominioDTO.MarcadorDTO;
-import org.itson.DominioDTO.MovimientoDTO;
-import org.itson.DominioDTO.RespuestaDTO;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -27,30 +14,43 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
+import org.itson.Dominio.CasillaJugador;
+import org.itson.Dominio.Cuadro;
+import org.itson.Dominio.Jugador;
+import org.itson.Dominio.Linea;
+import org.itson.Dominio.Marcador;
+import org.itson.Dominio.Posicion;
+import org.itson.DominioSTK.CuadroSTK;
+import org.itson.DominioSTK.JugadorSTK;
+import org.itson.DominioSTK.LineaSTK;
+import org.itson.DominioSTK.MarcadorSTK;
+import org.itson.DominioSTK.MovimientoSTK;
+import org.itson.DominioSTK.RespuestaSTK;
+import org.itson.Interfaces.IActu;
 
 /**
  *
- * @author march
+ * @author koine
  */
-public class SckClient implements Runnable {
-
+public class SocketJugador implements Runnable{
+    
     private Jugador jugador;
     private Socket socket;
     private ObjectInputStream clientInput;
     private ObjectOutputStream clientOutput;
-    private IActualizable actualizable;
+    private IActu actualizable;
     private Object objeto;
 
-    private static SckClient instance;
+    private static SocketJugador instance;
 
-    private SckClient(Jugador jugador, IActualizable actualizable) {
+    private SocketJugador(Jugador jugador, IActu actualizable) {
         this.jugador = jugador;
         this.actualizable = actualizable;
     }
 
-    public static SckClient getInstance(Jugador jugador, IActualizable actualizable) {
+    public static SocketJugador getInstance(Jugador jugador, IActu actualizable) {
         if (instance == null) {
-            instance = new SckClient(jugador, actualizable);
+            instance = new SocketJugador(jugador, actualizable);
         } else {
             instance.actualizable = actualizable;
         }
@@ -81,10 +81,10 @@ public class SckClient implements Runnable {
                 objeto = clientInput.readObject();
 
                 if (objeto instanceof List) {
-                    List<JugadorDTO> jugadoresDTO = (List<JugadorDTO>) objeto;
+                    List<JugadorSTK> jugadoresDTO = (List<JugadorSTK>) objeto;
                     List<Jugador> jugadores = new ArrayList<>();
 
-                    for (JugadorDTO jugador : jugadoresDTO) {
+                    for (JugadorSTK jugador : jugadoresDTO) {
                         jugadores.add(new Jugador(jugador.getNombreJugador(), jugador.getRutaAvatar()));
                     }
 
@@ -92,24 +92,24 @@ public class SckClient implements Runnable {
                 } else if (objeto instanceof String) {
                     String string = (String) objeto;
                     objeto = string;
-                } else if (objeto instanceof MarcadorDTO) {
-                    MarcadorDTO marcadorDTO = (MarcadorDTO) objeto;
-                    List<JugadorDTO> jugadoresDTO = marcadorDTO.getJugadores();
+                } else if (objeto instanceof MarcadorSTK) {
+                    MarcadorSTK marcadorDTO = (MarcadorSTK) objeto;
+                    List<JugadorSTK> jugadoresDTO = marcadorDTO.getJugadores();
                     List<Jugador> jugadores = new ArrayList<>();
 
-                    for (JugadorDTO jugador : jugadoresDTO) {
+                    for (JugadorSTK jugador : jugadoresDTO) {
                         jugadores.add(new Jugador(jugador.getNombreJugador(), jugador.getRutaAvatar(), jugador.getPuntaje()));
                     }
 
                     Marcador marcador = new Marcador(jugadores);
 
                     objeto = marcador;
-                } else if (objeto instanceof RespuestaDTO) {
-                    MovimientoDTO movimiento = ((RespuestaDTO) objeto).getMovimiento();
+                } else if (objeto instanceof RespuestaSTK) {
+                    MovimientoSTK movimiento = ((RespuestaSTK) objeto).getMovimiento();
                     List<CasillaJugador> formas = new ArrayList<>();
 
                     if (movimiento.getLinea() != null) {
-                        LineaDTO lineaDTO = movimiento.getLinea();
+                        LineaSTK lineaDTO = movimiento.getLinea();
 
                         Linea linea = new Linea(
                                 Posicion.valueOf(lineaDTO.getPosicion()),
@@ -122,7 +122,7 @@ public class SckClient implements Runnable {
                         formas.add(linea);
                     }
 
-                    for (CuadroDTO cuadroDTO : movimiento.getCuadros()) {
+                    for (CuadroSTK cuadroDTO : movimiento.getCuadros()) {
                         Cuadro cuadro = new Cuadro(
                                 new Jugador(
                                         cuadroDTO.getJugador().getNombreJugador(),
@@ -133,12 +133,12 @@ public class SckClient implements Runnable {
                         formas.add(cuadro);
                     }
 
-                    MarcadorDTO marcadorDTO = ((RespuestaDTO) objeto).getMarcador();
+                    MarcadorSTK marcadorDTO = ((RespuestaSTK) objeto).getMarcador();
                     System.out.println("MarcadorDTO " + marcadorDTO);
-                    List<JugadorDTO> jugadoresDTO = marcadorDTO.getJugadores();
+                    List<JugadorSTK> jugadoresDTO = marcadorDTO.getJugadores();
                     List<Jugador> jugadores = new ArrayList<>();
 
-                    for (JugadorDTO jugador : jugadoresDTO) {
+                    for (JugadorSTK jugador : jugadoresDTO) {
                         jugadores.add(new Jugador(jugador.getNombreJugador(), jugador.getRutaAvatar(), jugador.getPuntaje()));
                     }
 
@@ -156,7 +156,7 @@ public class SckClient implements Runnable {
 
                 System.out.println(objeto);
             } catch (IOException | ClassNotFoundException ex) {
-                Logger.getLogger(SckClient.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(SocketJugador.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -165,7 +165,7 @@ public class SckClient implements Runnable {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                actualizable.actualizaDeSocket(objeto);
+                actualizable.actualizaSocket(objeto);
             }
         });
     }

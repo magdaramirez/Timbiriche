@@ -11,23 +11,23 @@ import org.itson.Dominio.Marcador;
 import org.itson.DominioDTO.MensajeSockets;
 import java.util.List;
 import javax.swing.ImageIcon;
-import org.itson.Interfaces.IActualizable;
+import org.itson.Interfaces.IActu;
 import org.itson.SckCliente.Cliente;
-import org.itson.Interfaces.ICliente;
+import org.itson.Interfaces.IJugador;
 import org.itson.Utils.FormUtils;
 
 /**
  *
  * @author march
  */
-public class FrmSalaJuego extends javax.swing.JFrame implements IActualizable {
+public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
     
     private Jugador jugador;
     private String ip;
     private int port;
     private static FrmSalaJuego instance;
 
-    private ICliente sck;
+    private IJugador sck;
 
     private int jugadoresDibujados = 0;
     
@@ -38,7 +38,7 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActualizable {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setTitle("Sala de espera. Un momento");
-        this.sck = new Cliente(jugador, this);
+        this.sck = new ClienteJugador(jugador, this);
     }
 
     /**
@@ -292,7 +292,7 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActualizable {
         pnlJugador1Layout.setVerticalGroup(
             pnlJugador1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlJugador1Layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
+                .addContainerGap(35, Short.MAX_VALUE)
                 .addComponent(lblJugador1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
             .addGroup(pnlJugador1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,7 +331,7 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActualizable {
             .addGroup(pnlJugador4Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(lblJugador4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
             .addGroup(pnlJugador4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlJugador4Layout.createSequentialGroup()
                     .addContainerGap()
@@ -368,7 +368,7 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActualizable {
             .addGroup(pnlJugador3Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(lblJugador3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
             .addGroup(pnlJugador3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlJugador3Layout.createSequentialGroup()
                     .addContainerGap()
@@ -403,7 +403,7 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActualizable {
         pnlJugador2Layout.setVerticalGroup(
             pnlJugador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlJugador2Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addComponent(lblJugador2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
             .addGroup(pnlJugador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -594,7 +594,7 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActualizable {
     private javax.swing.JPanel pnlSalir;
     // End of variables declaration//GEN-END:variables
     @Override
-    public void actualizaDeSocket(Object mensaje) {
+    public void actualizaSocket(Object mensaje) {
         if (mensaje instanceof String) {
             recibirMensaje((String) mensaje);
         } else if (mensaje instanceof List) {

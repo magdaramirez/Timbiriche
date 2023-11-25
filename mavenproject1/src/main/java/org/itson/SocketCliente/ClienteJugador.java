@@ -3,40 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.itson.SckCliente;
+package org.itson.SocketCliente;
 
-import org.itson.Interfaces.IActualizable;
-import org.itson.Interfaces.ICliente;
-import org.itson.Dominio.Cuadro;
-import org.itson.Dominio.CasillaJugador;
-import org.itson.Dominio.Jugador;
-import org.itson.Dominio.Linea;
-import org.itson.DominioDTO.CuadroDTO;
-import org.itson.DominioDTO.JugadorDTO;
-import org.itson.DominioDTO.LineaDTO;
-import org.itson.DominioDTO.MensajeSockets;
-import org.itson.DominioDTO.MovimientoDTO;
+import org.itson.DominioSTK.MsjSocket;
 import java.io.IOException;
 import java.util.List;
+import org.itson.Dominio.*;
+import org.itson.DominioSTK.*;
+import org.itson.Interfaces.IActu;
+import org.itson.Interfaces.IJugador;
 
 /**
  *
- * @author march
+ * @author koine
  */
-public class Cliente implements ICliente {
+public class ClienteJugador implements IJugador{
+    
+    private static ClienteJugador instance;
 
-    private static Cliente instance;
+    private SocketJugador socketJug;
 
-    private SckClient sckCliente;
-
-    public Cliente(Jugador jugador, IActualizable actualizable) {
-        this.sckCliente = SckClient.getInstance(jugador, actualizable);
+    public ClienteJugador(Jugador jugador, IActu actualizable) {
+        this.socketJug = SocketJugador.getInstance(jugador, actualizable);
     }
 
     @Override
     public boolean conectarAlServidor(String address, int port) {
         try {
-            sckCliente.conectarAlServidor(address, port);
+            socketJug.conectarAlServidor(address, port);
             return true;
         } catch (IOException ex) {
             return false;
@@ -48,31 +42,31 @@ public class Cliente implements ICliente {
         try {
             if (mensaje instanceof Jugador) {
                 Jugador jugador = (Jugador) mensaje;
-                JugadorDTO mensajeNuevo = new JugadorDTO(jugador.getNombre(), jugador.getRutaAvatar(), jugador.getPuntaje());
-                sckCliente.enviarAlServidor(mensajeNuevo);
+                JugadorSTK mensajeNuevo = new JugadorSTK(jugador.getNombre(), jugador.getRutaAvatar(), jugador.getPuntaje());
+                socketJug.enviarAlServidor(mensajeNuevo);
                 return true;
             } else if (mensaje instanceof List) {
-                MovimientoDTO movimiento = new MovimientoDTO();
+                MovimientoSTK movimiento = new MovimientoSTK();
                 List<CasillaJugador> formas = (List<CasillaJugador>) mensaje;
 
                 for (int i = 0; i < formas.size(); i++) {
                     if (i == 0) {
                         Linea linea = (Linea) formas.get(i);
-                        LineaDTO formaNueva
-                                = new LineaDTO(
+                        LineaSTK formaNueva
+                                = new LineaSTK(
                                         linea.getPosicion().toString(),
                                         linea.getIndice(),
-                                        new JugadorDTO(
+                                        new JugadorSTK(
                                                 linea.getJugador().getNombre(),
                                                 linea.getJugador().getRutaAvatar(),
                                                 linea.getJugador().getPuntaje()));
                         movimiento.setLinea(formaNueva);
                     } else {
                         Cuadro cuadro = (Cuadro) formas.get(i);
-                        CuadroDTO formaNueva
-                                = new CuadroDTO(
+                        CuadroSTK formaNueva
+                                = new CuadroSTK(
                                         cuadro.getIndice(),
-                                        new JugadorDTO(
+                                        new JugadorSTK(
                                                 cuadro.getJugador().getNombre(),
                                                 cuadro.getJugador().getRutaAvatar(),
                                                 cuadro.getJugador().getPuntaje()));
@@ -80,13 +74,13 @@ public class Cliente implements ICliente {
                     }
                 }
 
-                sckCliente.enviarAlServidor(movimiento);
+                socketJug.enviarAlServidor(movimiento);
                 return true;
             } else if (mensaje instanceof String) {
-                sckCliente.enviarAlServidor(mensaje);
+                socketJug.enviarAlServidor(mensaje);
                 return true;
-            } else if (mensaje instanceof MensajeSockets) {
-                sckCliente.enviarAlServidor(mensaje);
+            } else if (mensaje instanceof MsjSocket) {
+                socketJug.enviarAlServidor(mensaje);
                 return true;
             }
             return false;
@@ -98,9 +92,9 @@ public class Cliente implements ICliente {
     @Override
     public void escucharAlServidor() {
         try {
-            sckCliente.escucharAlServidor();
+            socketJug.escucharAlServidor();
         } catch (IOException | ClassNotFoundException ex) {
-            System.out.println("Problemas al recibir la respuesta del servidor");
+            System.out.println("Problemas al recibir respuesta del servidor");
         }
     }
 }

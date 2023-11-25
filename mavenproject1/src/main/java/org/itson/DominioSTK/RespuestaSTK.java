@@ -3,36 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.itson.DominioDTO;
+package org.itson.DominioSTK;
 
 import java.io.Serializable;
 
 /**
  *
- * @author march
+ * @author koine
  */
-public class RespuestaDTO implements Serializable{
-    private MovimientoDTO movimiento;
-    private MarcadorDTO marcador;
+public class RespuestaSTK implements Serializable{
+    private MovimientoSTK movimiento;
+    private MarcadorSTK marcador;
 
-    public RespuestaDTO(MovimientoDTO movimiento, MarcadorDTO marcador) {
+    public RespuestaSTK(MovimientoSTK movimiento, MarcadorSTK marcador) {
         this.movimiento = movimiento;
         this.marcador = marcador;
     }
 
-    public MovimientoDTO getMovimiento() {
+    public MovimientoSTK getMovimiento() {
         return movimiento;
     }
 
-    public void setMovimiento(MovimientoDTO movimiento) {
+    public void setMovimiento(MovimientoSTK movimiento) {
         this.movimiento = movimiento;
     }
 
-    public MarcadorDTO getMarcador() {
+    public MarcadorSTK getMarcador() {
         return marcador;
     }
 
-    public void setMarcador(MarcadorDTO marcador) {
+    public void setMarcador(MarcadorSTK marcador) {
         this.marcador = marcador;
     }
 }

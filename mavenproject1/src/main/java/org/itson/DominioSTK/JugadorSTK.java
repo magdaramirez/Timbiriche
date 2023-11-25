@@ -3,40 +3,40 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.itson.DominioDTO;
+package org.itson.DominioSTK;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
- * @author march
+ * @author koine
  */
-public class JugadorDTO implements Serializable{
-    private String jugador;
-    private String rutaAvatar;
+public class JugadorSTK implements Serializable{
+    private String nombreJugador;
+    private String avatar;
     private int puntaje;
 
-    public JugadorDTO(String nombreJugador, String rutaAvatar, int puntaje) {
-        this.jugador = nombreJugador;
-        this.rutaAvatar = rutaAvatar;
+    public JugadorSTK(String nombreJugador, String avatar, int puntaje) {
+        this.nombreJugador = nombreJugador;
+        this.avatar = avatar;
         this.puntaje = puntaje;
     }
 
     public String getNombreJugador() {
-        return jugador;
+        return nombreJugador;
     }
 
     public void setNombreJugador(String nombreJugador) {
-        this.jugador = nombreJugador;
+        this.nombreJugador = nombreJugador;
     }
 
     public String getRutaAvatar() {
-        return rutaAvatar;
+        return avatar;
     }
 
-    public void setRutaAvatar(String rutaAvatar) {
-        this.rutaAvatar = rutaAvatar;
+    public void setRutaAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public int getPuntaje() {
@@ -50,7 +50,7 @@ public class JugadorDTO implements Serializable{
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.jugador);
+        hash = 97 * hash + Objects.hashCode(this.nombreJugador);
         return hash;
     }
 
@@ -65,8 +65,8 @@ public class JugadorDTO implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final JugadorDTO other = (JugadorDTO) obj;
-        if (!Objects.equals(this.jugador, other.jugador)) {
+        final JugadorSTK other = (JugadorSTK) obj;
+        if (!Objects.equals(this.nombreJugador, other.nombreJugador)) {
             return false;
         }
         return true;
@@ -74,6 +74,6 @@ public class JugadorDTO implements Serializable{
 
     @Override
     public String toString() {
-        return "JugadorDTO{" + "nombreJugador=" + jugador + ", rutaAvatar=" + rutaAvatar + ", puntaje=" + puntaje + '}';
+        return "JugadorDTO{" + "nombreJugador=" + nombreJugador + ", rutaAvatar=" + avatar + ", puntaje=" + puntaje + '}';
     }
 }
