@@ -13,8 +13,8 @@ import org.itson.Dominio.Partida;
 import org.itson.Dominio.Tablero;
 import java.util.List;
 import org.itson.Interfaces.IActu;
-import org.itson.SckCliente.Cliente;
-import org.itson.Interfaces.ICliente;
+import org.itson.SocketCliente.ClienteJugador;
+import org.itson.Interfaces.IJugador;
 import org.itson.Interfaces.PnlObservador;
 
 /**
@@ -30,7 +30,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
 
     private Jugador jugador;
 
-    private ICliente sck;
+    private IJugador sck;
 
     private PnlTablero pnlTablero;
     
@@ -44,7 +44,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         this.setLocationRelativeTo(null);
         this.setResizable(false);
 
-        this.sck = new Cliente(this.jugador, this);
+        this.sck = new ClienteJugador(this.jugador, this);
 
         //Inicializar Sala
         Tablero tablero = new Tablero(marcador.getJugadores().size());

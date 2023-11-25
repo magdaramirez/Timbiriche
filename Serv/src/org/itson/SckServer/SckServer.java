@@ -18,7 +18,7 @@ import java.util.List;
 public class SckServer {
 static volatile List<SckServerThread> threads = new ArrayList<>();
 
-    static int MAX = 4;
+    static int MAX = 2;
 
     private SckServerProtocol ssp = new SckServerProtocol();
     

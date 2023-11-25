@@ -8,11 +8,11 @@ import java.awt.Color;
 import javax.swing.JPanel;
 import org.itson.Dominio.Jugador;
 import org.itson.Dominio.Marcador;
-import org.itson.DominioDTO.MensajeSockets;
+import org.itson.DominioSTK.MsjSocket;
 import java.util.List;
 import javax.swing.ImageIcon;
 import org.itson.Interfaces.IActu;
-import org.itson.SckCliente.Cliente;
+import org.itson.SocketCliente.ClienteJugador;
 import org.itson.Interfaces.IJugador;
 import org.itson.Utils.FormUtils;
 
@@ -123,18 +123,22 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
             switch (i) {
                 case 0:
                     this.lblAvatarJugador1.setIcon(new ImageIcon("src\\main\\resources\\img\\" + jugadores.get(i).getRutaAvatar()));
+                    jugadores.get(i).setNombre("Jugador 1");
                     this.lblJugador1.setText(jugadores.get(i).getNombre());
                     break;
                 case 1:
                     this.lblAvatarJugador2.setIcon(new ImageIcon("src\\main\\resources\\img\\" + jugadores.get(i).getRutaAvatar()));
+                    jugadores.get(i).setNombre("Jugador 2");
                     this.lblJugador2.setText(jugadores.get(i).getNombre());
                     break;
                 case 2:
                     this.lblAvatarJugador3.setIcon(new ImageIcon("src\\main\\resources\\img\\" + jugadores.get(i).getRutaAvatar()));
+                    jugadores.get(i).setNombre("Jugador 3");
                     this.lblJugador3.setText(jugadores.get(i).getNombre());
                     break;
                 case 3:
                     this.lblAvatarJugador4.setIcon(new ImageIcon("src\\main\\resources\\img\\" + jugadores.get(i).getRutaAvatar()));
+                    jugadores.get(i).setNombre("Jugador 4");
                     this.lblJugador4.setText(jugadores.get(i).getNombre());
                     break;
                 default:
@@ -551,7 +555,7 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
     }//GEN-LAST:event_btnColoresActionPerformed
 
     private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
-        if (sck.enviarAlServidor(MensajeSockets.VOTO)) {
+        if (sck.enviarAlServidor(MsjSocket.VOTO)) {
 
             //Cambiar texto del boton de votar
             if (this.btnListo.getText().equals("Listo")) {
@@ -600,7 +604,7 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
         } else if (mensaje instanceof List) {
             recibirJugadores((List<Jugador>) mensaje);
         } else if (mensaje instanceof Marcador) {
-            FrmTablero frmTablero = null;
+            FrmTablero frmTablero = new FrmTablero((Marcador) mensaje, this.jugador);
             FormUtils.cargarForm(frmTablero, this);
         }
     }
