@@ -21,8 +21,8 @@ import org.itson.Interfaces.PnlObservador;
  *
  * @author march
  */
-public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IActu{
-    
+public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IActu {
+
     /**
      * Instancia de partida que cambia dentro de un hilo.
      */
@@ -33,7 +33,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
     private IJugador sck;
 
     private PnlTablero pnlTablero;
-    
+
     /**
      * Creates new form FrmTablero
      */
@@ -50,12 +50,21 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         Tablero tablero = new Tablero(marcador.getJugadores().size());
         this.partida = new Partida(marcador, tablero, marcador.getJugadores().size());
         System.out.println(this.partida.toString());
-
+        
         establecerColores();
+        establecerNombres();
         establecerMarcador();
         establecerTablero();
     }
-    
+
+    private void establecerNombres() {
+        int numeroJugador = 1;
+        for (int i = 0; i < this.partida.getMarcador().getJugadores().size(); i++) {
+            this.partida.getMarcador().getJugadores().get(i).setNombre("Jugador "+numeroJugador);
+            numeroJugador += 1;
+        }
+    }
+
     private void establecerColores() {
         int index = this.partida.getMarcador().getJugadores().indexOf(this.jugador);
         this.partida.getMarcador().getJugadores().get(index).setColor(this.jugador.getColor());
@@ -153,7 +162,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
     public void setSala(Partida partida) {
         this.partida = partida;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
