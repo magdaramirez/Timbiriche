@@ -16,7 +16,7 @@ public class AsignarLinea implements IJuegoPipa{
       private LineaSTK linea;
 
     public AsignarLinea(LineaSTK linea) {
-        
+        this.linea = linea;
     }
 
     @Override
