@@ -104,6 +104,9 @@ public class SRep {
             }
         }
     }
-
+    
+//    public synchronized int finalizarPartida(){
+//        return this.ultimoCuadro.estaCompleto();
+//    }
     
 }

@@ -37,9 +37,9 @@ public class Cuadro extends CasillaJugador{
         this.izquierda = izquierda;
         this.derecha = derecha;
     }
-
+    
     public char obtenerInicial() {
-        return this.getJugador().getNombre().charAt(0);
+        return this.getJugador().getNombre().charAt(9);
     }
 
     public boolean tieneLinea(Linea lineaBuscada) {

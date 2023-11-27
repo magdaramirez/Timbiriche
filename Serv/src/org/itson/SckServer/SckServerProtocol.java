@@ -34,7 +34,10 @@ public class SckServerProtocol {
             MovimientoSTK movimiento = (MovimientoSTK) mensajeEntrante;
             
             if(movimiento.getLinea() != null){
-                juego.asignarLinea(movimiento.getLinea());
+                if(rep.obtenerTurnoSiguiente()== 0){
+                    juego.asignarLinea(movimiento.getLinea());
+//                    return MsjSocket.TURNO_TERMINADO;
+                }
             }else if(movimiento.getCuadros() != null){
                 for (CuadroSTK cuadro : movimiento.getCuadros()) {
                     juego.asignarCuadro(cuadro);
