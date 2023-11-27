@@ -55,7 +55,7 @@ public class Repositorio implements IRepositorio{
                 = new CuadroSTK(cuadro.getIndice(),
                         new JugadorSTK(cuadro.getJugador().getNombre(),
                                 cuadro.getJugador().getRutaAvatar(),
-                                cuadro.getJugador().getPuntaje()));
+                                cuadro.getJugador().getPuntaje()+1));
 
         return cuadroSTK;
     }

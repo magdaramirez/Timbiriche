@@ -76,7 +76,7 @@ public class SRep {
     }
     
     public synchronized int obtenerTurnoSiguiente(){
-        return this.partida.getMarcador().getSiguiente();
+        return this.partida.getMarcador().getSiguiente()+1;
     }
     
     public synchronized void retirarJugador(Jugador jugador) {
