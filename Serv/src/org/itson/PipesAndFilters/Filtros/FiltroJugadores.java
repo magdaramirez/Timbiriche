@@ -20,8 +20,9 @@ public class FiltroJugadores implements Filtro<List<JugadorSTK>, List<Jugador>, 
     public void procesar(List<JugadorSTK> objeto) {
         List<Jugador> jugadores = new ArrayList<>();
         for (JugadorSTK jugadorSTK : objeto) {
+
             Jugador jugador = new Jugador(jugadorSTK.getNombreJugador(), 
-                    jugadorSTK.getRutaAvatar());
+                    jugadorSTK.getRutaAvatar(),jugadorSTK.getPuntaje());
             jugadores.add(jugador);
         }
         PipaJugadores pipaJ = new PipaJugadores();

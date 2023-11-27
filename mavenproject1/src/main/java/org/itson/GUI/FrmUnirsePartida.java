@@ -5,7 +5,10 @@
 package org.itson.GUI;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import org.itson.Dominio.Jugador;
+import org.itson.Dominio.Preferencia;
 
 /**
  *
@@ -65,6 +68,10 @@ public class FrmUnirsePartida extends javax.swing.JFrame {
         lblRegresar = new javax.swing.JLabel();
         pnlSalir = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        lblipSala = new javax.swing.JLabel();
+        txtipSala = new javax.swing.JTextField();
+        lblCodigo1 = new javax.swing.JLabel();
+        cmbNombre = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -76,12 +83,17 @@ public class FrmUnirsePartida extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/UnirsePartida.png"))); // NOI18N
 
         lblCodigo.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-        lblCodigo.setText("Código:");
+        lblCodigo.setText("Nombre:");
 
         txtCodigo.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
 
         btnUnirse.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnUnirse.setText("Unirse");
+        btnUnirse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUnirseActionPerformed(evt);
+            }
+        });
 
         pnlHeader.setBackground(new java.awt.Color(255, 255, 255));
         pnlHeader.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -155,28 +167,49 @@ public class FrmUnirsePartida extends javax.swing.JFrame {
 
         pnlHeader.add(pnlSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 60, -1));
 
+        lblipSala.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        lblipSala.setText("IP sala:");
+
+        txtipSala.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+
+        lblCodigo1.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        lblCodigo1.setText("Código:");
+
+        cmbNombre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "jugador 2", "jugador 3", "jugador 4" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(302, 302, 302)
-                        .addComponent(btnUnirse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(240, 240, 240)
-                        .addComponent(lblCodigo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(122, 122, 122)
+                        .addComponent(jLabel1)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(303, 303, 303)
+                        .addComponent(btnUnirse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(pnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(99, 99, 99))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lblipSala)
+                                        .addComponent(lblCodigo1))
+                                    .addComponent(lblCodigo))
+                                .addGap(35, 35, 35)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cmbNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtipSala, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(323, 323, 323))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,13 +217,23 @@ public class FrmUnirsePartida extends javax.swing.JFrame {
                 .addComponent(pnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addComponent(jLabel1)
-                .addGap(36, 36, 36)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblCodigo)
+                        .addGap(0, 7, Short.MAX_VALUE))
+                    .addComponent(cmbNombre))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCodigo)
-                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCodigo1))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtipSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblipSala))
+                .addGap(27, 27, 27)
                 .addComponent(btnUnirse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addGap(46, 46, 46))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 440));
@@ -223,16 +266,42 @@ public class FrmUnirsePartida extends javax.swing.JFrame {
         regresarVentanaInicio();
     }//GEN-LAST:event_pnlRegresarMouseClicked
 
+    private void btnUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnirseActionPerformed
+        String ip = null, port = null, nombre="";
+        
+        nombre = this.cmbNombre.getSelectedItem().toString();
+        port = this.txtCodigo.getText().toString();
+        ip =  this.txtipSala.getText().toString();
+        
+        Jugador jugador = new Jugador(nombre, "perro.png",1);
+        Preferencia pref = new Preferencia("#0099FF", "#FF3399", "#FFFF33");
+        jugador.setPreferencia(pref);
+        jugador.setColor("#33FF00");
+        
+        FrmSalaJuego salaJuego = FrmSalaJuego.getInstance();
+        if(salaJuego.ejecutarConexion(jugador, ip, Integer.valueOf(port))){
+            salaJuego.setVisible(true);
+            this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(this,"No se pudo realizar la conexión con el servidor", "Fallo de Conexión", JOptionPane.ERROR_MESSAGE);
+            salaJuego = null;
+        }
+    }//GEN-LAST:event_btnUnirseActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnUnirse;
+    private javax.swing.JComboBox<String> cmbNombre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblCodigo1;
     private javax.swing.JLabel lblRegresar;
+    private javax.swing.JLabel lblipSala;
     private javax.swing.JPanel pnlHeader;
     private javax.swing.JPanel pnlRegresar;
     private javax.swing.JPanel pnlSalir;
     private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtipSala;
     // End of variables declaration//GEN-END:variables
 }

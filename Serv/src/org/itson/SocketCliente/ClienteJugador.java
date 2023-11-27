@@ -67,7 +67,7 @@ public class ClienteJugador implements IJugador{
                                         new JugadorSTK(
                                                 cuadro.getJugador().getNombre(),
                                                 cuadro.getJugador().getRutaAvatar(),
-                                                cuadro.getJugador().getPuntaje()));
+                                                cuadro.getJugador().getPuntaje()+1));
                         movimiento.setCuadro(formaNueva);
                     }
                 }

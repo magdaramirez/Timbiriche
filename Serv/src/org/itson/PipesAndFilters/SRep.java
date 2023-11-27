@@ -47,15 +47,38 @@ public class SRep {
     }
 
     public synchronized void asignarCuadro(Cuadro cuadro) {
+        int puntaje;
         for (Jugador jugador : this.partida.getMarcador().getJugadores()) {
             if(jugador.equals(cuadro.getJugador())){
+                puntaje=jugador.getPuntaje();
+                puntaje = puntaje+1;
+                jugador.setPuntaje(puntaje);
                 this.partida.getTablero().getCuadros().get(cuadro.getIndice()).setJugador(jugador);
-                jugador.setPuntaje(jugador.getPuntaje()+1);
                 this.ultimoCuadro = this.partida.getTablero().getCuadros().get(cuadro.getIndice());
             }
         }
     }
-
+    
+    public synchronized Partida getSala() {
+        return partida;
+    }
+    
+    public synchronized Marcador obtenerMarcador(){
+        return this.partida.getMarcador();
+    }
+    
+    public synchronized Linea obtenerUltimaLinea(){
+        return this.ultimaLinea;
+    }
+    
+    public synchronized Cuadro obtenerUltimoCuadro(){
+        return this.ultimoCuadro;
+    }
+    
+    public synchronized int obtenerTurnoSiguiente(){
+        return this.partida.getMarcador().getSiguiente();
+    }
+    
     public synchronized void retirarJugador(Jugador jugador) {
         for (Jugador jugObj : this.partida.getMarcador().getJugadores()) {
             if(jugObj.equals(jugador)){
@@ -82,23 +105,5 @@ public class SRep {
         }
     }
 
-    public synchronized Partida getSala() {
-        return partida;
-    }
     
-    public synchronized Marcador obtenerMarcador(){
-        return this.partida.getMarcador();
-    }
-    
-    public synchronized Linea obtenerUltimaLinea(){
-        return this.ultimaLinea;
-    }
-    
-    public synchronized Cuadro obtenerUltimoCuadro(){
-        return this.ultimoCuadro;
-    }
-    
-    public synchronized int obtenerTurnoSiguiente(){
-        return this.partida.getMarcador().getSiguiente();
-    }
 }

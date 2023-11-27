@@ -34,7 +34,7 @@ public class Repositorio implements IRepositorio{
     public LineaSTK obtenerUltimaLinea() {
         Linea linea = sr.obtenerUltimaLinea();
         if (linea != null) {
-            LineaSTK lineaDTO
+            LineaSTK lineaSTK
                     = new LineaSTK(
                             linea.getPosicion().toString(),
                             linea.getIndice(),
@@ -42,7 +42,7 @@ public class Repositorio implements IRepositorio{
                                     linea.getJugador().getNombre(),
                                     linea.getJugador().getRutaAvatar(),
                                     linea.getJugador().getPuntaje()));
-            return lineaDTO;
+            return lineaSTK;
         }else{
             return null;
         }

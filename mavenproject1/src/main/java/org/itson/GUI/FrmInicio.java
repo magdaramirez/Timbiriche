@@ -7,7 +7,7 @@ package org.itson.GUI;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import org.itson.Dominio.Jugador;
+import org.itson.Dominio.*;
 
 /**
  *
@@ -200,7 +200,10 @@ public class FrmInicio extends javax.swing.JFrame {
         ip = JOptionPane.showInputDialog(this, "Dirección IP", "¿A donde te quieres conectar?", JOptionPane.OK_CANCEL_OPTION);
         port = JOptionPane.showInputDialog(this, "Puerto", "¿A donde quieres llegar?", JOptionPane.OK_CANCEL_OPTION);
         
-        Jugador jugador = new Jugador("Jugador", "perro.png");
+        Jugador jugador = new Jugador("Jugador 1", "perro.png");
+        Preferencia pref = new Preferencia("#0099FF", "#FF3399", "#FFFF33");
+        jugador.setPreferencia(pref);
+        jugador.setColor("#33FF00");
         
         FrmSalaJuego salaJuego = FrmSalaJuego.getInstance();
         if(salaJuego.ejecutarConexion(jugador, ip, Integer.valueOf(port))){

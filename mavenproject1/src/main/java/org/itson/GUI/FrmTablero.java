@@ -52,19 +52,19 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         System.out.println(this.partida.toString());
         
         establecerColores();
-        establecerNombres();
+//        establecerNombres();
         establecerMarcador();
         establecerTablero();
     }
 
-    private void establecerNombres() {
-        int numeroJugador = 1;
-        for (int i = 0; i < this.partida.getMarcador().getJugadores().size(); i++) {
-            this.partida.getMarcador().getJugadores().get(i).setNombre("Jugador "+numeroJugador);
-            numeroJugador += 1;
-        }
-    }
-
+//    private void establecerNombres() {
+//        int numeroJugador = 1;
+//        for (int i = 0; i < this.partida.getMarcador().getJugadores().size(); i++) {
+//            this.partida.getMarcador().getJugadores().get(i).setNombre("Jugador "+numeroJugador);
+//            numeroJugador += 1;
+//        }
+//    }
+    
     private void establecerColores() {
         int index = this.partida.getMarcador().getJugadores().indexOf(this.jugador);
         this.partida.getMarcador().getJugadores().get(index).setColor(this.jugador.getColor());
@@ -72,7 +72,9 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         int indicador = 0;
         for (int i = 0; i < this.partida.getMarcador().getJugadores().size(); i++) {
             if (!this.partida.getMarcador().getJugadores().get(i).equals(this.jugador)) {
-                this.partida.getMarcador().getJugadores().get(i).setColor(this.jugador.getPreferencia().getColores().get(indicador));
+                if(indicador==0){
+                    this.partida.getMarcador().getJugadores().get(i).setColor(this.jugador.getPreferencia().getColores().get(indicador));
+                }
                 indicador++;
             }
         }
@@ -110,19 +112,19 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         for (int i = 0; i < this.partida.getMarcador().getJugadores().size(); i++) {
             switch (i) {
                 case 0:
-                    ((PnlJugador) pnlJugador1.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
+                    ((PnlJugador) pnlJugador1.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje()+1);
                     pnlJugador1.revalidate();
                     break;
                 case 1:
-                    ((PnlJugador) pnlJugador2.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
+                    ((PnlJugador) pnlJugador2.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje()+1);
                     pnlJugador2.revalidate();
                     break;
                 case 2:
-                    ((PnlJugador) pnlJugador3.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
+                    ((PnlJugador) pnlJugador3.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje()+1);
                     pnlJugador3.revalidate();
                     break;
                 case 3:
-                    ((PnlJugador) pnlJugador4.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje());
+                    ((PnlJugador) pnlJugador4.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje()+1);
                     pnlJugador4.revalidate();
                     break;
                 default:
@@ -175,6 +177,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         jPanel1 = new javax.swing.JPanel();
         pnlFondoTablero = new javax.swing.JPanel();
         pnlJugador1 = new javax.swing.JPanel();
+        lblPuntaje = new javax.swing.JLabel();
         pnlJugador2 = new javax.swing.JPanel();
         pnlJugador4 = new javax.swing.JPanel();
         pnlJugador3 = new javax.swing.JPanel();
@@ -195,7 +198,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlFondoTablero.setBackground(new java.awt.Color(255, 255, 255));
-        pnlFondoTablero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlFondoTablero.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         pnlFondoTablero.setMaximumSize(new java.awt.Dimension(650, 650));
         pnlFondoTablero.setMinimumSize(new java.awt.Dimension(650, 650));
         pnlFondoTablero.setPreferredSize(new java.awt.Dimension(650, 650));
@@ -214,26 +217,34 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         jPanel1.add(pnlFondoTablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 6, -1, -1));
 
         pnlJugador1.setBackground(new java.awt.Color(255, 255, 255));
-        pnlJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         pnlJugador1.setMaximumSize(new java.awt.Dimension(150, 142));
         pnlJugador1.setMinimumSize(new java.awt.Dimension(150, 142));
         pnlJugador1.setPreferredSize(new java.awt.Dimension(150, 142));
+
+        lblPuntaje.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout pnlJugador1Layout = new javax.swing.GroupLayout(pnlJugador1);
         pnlJugador1.setLayout(pnlJugador1Layout);
         pnlJugador1Layout.setHorizontalGroup(
             pnlJugador1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(pnlJugador1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblPuntaje, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         pnlJugador1Layout.setVerticalGroup(
             pnlJugador1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlJugador1Layout.createSequentialGroup()
+                .addContainerGap(98, Short.MAX_VALUE)
+                .addComponent(lblPuntaje, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel1.add(pnlJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
         pnlJugador2.setBackground(new java.awt.Color(255, 255, 255));
-        pnlJugador2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador2.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         pnlJugador2.setMaximumSize(new java.awt.Dimension(150, 142));
         pnlJugador2.setMinimumSize(new java.awt.Dimension(150, 142));
 
@@ -251,7 +262,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         jPanel1.add(pnlJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 514, -1, -1));
 
         pnlJugador4.setBackground(new java.awt.Color(255, 255, 255));
-        pnlJugador4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador4.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         pnlJugador4.setMaximumSize(new java.awt.Dimension(150, 142));
         pnlJugador4.setMinimumSize(new java.awt.Dimension(150, 142));
 
@@ -269,7 +280,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         jPanel1.add(pnlJugador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(832, 514, -1, -1));
 
         pnlJugador3.setBackground(new java.awt.Color(255, 255, 255));
-        pnlJugador3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador3.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         pnlJugador3.setMaximumSize(new java.awt.Dimension(150, 142));
         pnlJugador3.setMinimumSize(new java.awt.Dimension(150, 142));
         pnlJugador3.setPreferredSize(new java.awt.Dimension(150, 142));
@@ -314,6 +325,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
     private javax.swing.JButton btnColores;
     private javax.swing.JButton btnSalir;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblPuntaje;
     private javax.swing.JPanel pnlFondoTablero;
     private javax.swing.JPanel pnlJugador1;
     private javax.swing.JPanel pnlJugador2;

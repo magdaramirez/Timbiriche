@@ -16,7 +16,7 @@ import org.itson.PipesAndFilters.Pipas.PipaCuadro;
 public class FiltroCuadro implements Filtro<CuadroSTK, Cuadro, PipaCuadro>{
     @Override
     public void procesar(CuadroSTK objeto) {
-        Jugador jugador = new Jugador(objeto.getJugador().getNombreJugador(), objeto.getJugador().getRutaAvatar());
+        Jugador jugador = new Jugador(objeto.getJugador().getNombreJugador(), objeto.getJugador().getRutaAvatar(),objeto.getJugador().getPuntaje());
         
         Cuadro cuadro = new Cuadro(jugador, objeto.getIndice());
         PipaCuadro pc = new PipaCuadro();

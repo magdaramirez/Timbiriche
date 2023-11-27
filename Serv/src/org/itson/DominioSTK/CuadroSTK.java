@@ -19,6 +19,7 @@ public class CuadroSTK implements Serializable{
         this.indice = indice;
         this.jugador = jugador;
     }
+    
 
     public int getIndice() {
         return indice;

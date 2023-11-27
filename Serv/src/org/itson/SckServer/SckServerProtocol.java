@@ -54,8 +54,8 @@ public class SckServerProtocol {
         return null;
     }
 
-    public Object empezarPartida(List<JugadorSTK> jugadoresDTO) {
-        juego.crearSala(jugadoresDTO);
+    public Object empezarPartida(List<JugadorSTK> jugadoresSTK) {
+        juego.crearSala(jugadoresSTK);
         return rep.obtenerMarcador();
     }
 }

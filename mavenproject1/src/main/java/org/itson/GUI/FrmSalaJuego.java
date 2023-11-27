@@ -270,12 +270,12 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
         lblCodigo.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
 
         pnlJugador1.setBackground(new java.awt.Color(255, 255, 255));
-        pnlJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         pnlJugador1.setMaximumSize(new java.awt.Dimension(240, 80));
         pnlJugador1.setMinimumSize(new java.awt.Dimension(240, 80));
 
         lblAvatarJugador1.setBackground(new java.awt.Color(255, 255, 255));
-        lblAvatarJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblAvatarJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         lblJugador1.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
 
@@ -307,12 +307,12 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
         );
 
         pnlJugador4.setBackground(new java.awt.Color(255, 255, 255));
-        pnlJugador4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador4.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         pnlJugador4.setMaximumSize(new java.awt.Dimension(240, 80));
         pnlJugador4.setMinimumSize(new java.awt.Dimension(240, 80));
 
         lblAvatarJugador4.setBackground(new java.awt.Color(255, 255, 255));
-        lblAvatarJugador4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblAvatarJugador4.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         lblJugador4.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
 
@@ -344,12 +344,12 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
         );
 
         pnlJugador3.setBackground(new java.awt.Color(255, 255, 255));
-        pnlJugador3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador3.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         pnlJugador3.setMaximumSize(new java.awt.Dimension(240, 80));
         pnlJugador3.setMinimumSize(new java.awt.Dimension(240, 80));
 
         lblAvatarJugador3.setBackground(new java.awt.Color(255, 255, 255));
-        lblAvatarJugador3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblAvatarJugador3.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         lblJugador3.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
 
@@ -381,12 +381,12 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
         );
 
         pnlJugador2.setBackground(new java.awt.Color(255, 255, 255));
-        pnlJugador2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlJugador2.setBorder(javax.swing.BorderFactory.createLineBorder(null));
         pnlJugador2.setMaximumSize(new java.awt.Dimension(240, 80));
         pnlJugador2.setMinimumSize(new java.awt.Dimension(240, 80));
 
         lblAvatarJugador2.setBackground(new java.awt.Color(255, 255, 255));
-        lblAvatarJugador2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblAvatarJugador2.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         lblJugador2.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
 
@@ -418,7 +418,7 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
         );
 
         lblMensajes.setBackground(new java.awt.Color(255, 255, 255));
-        lblMensajes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblMensajes.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         btnListo.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnListo.setText("Listo");

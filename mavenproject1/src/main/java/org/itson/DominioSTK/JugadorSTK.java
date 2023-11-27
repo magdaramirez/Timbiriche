@@ -74,6 +74,6 @@ public class JugadorSTK implements Serializable{
 
     @Override
     public String toString() {
-        return "JugadorDTO{" + "nombreJugador=" + nombreJugador + ", rutaAvatar=" + avatar + ", puntaje=" + puntaje + '}';
+        return "JugadorSTK{" + "nombreJugador=" + nombreJugador + ", rutaAvatar=" + avatar + ", puntaje=" + puntaje + '}';
     }
 }

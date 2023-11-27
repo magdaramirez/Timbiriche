@@ -16,7 +16,7 @@ import org.itson.PipesAndFilters.Pipas.PipaJugador;
 public class FiltroJugador implements Filtro<JugadorSTK, Jugador, PipaJugador>{
     @Override
     public void procesar(JugadorSTK objeto) {
-        Jugador jugador = new Jugador(objeto.getNombreJugador(), objeto.getRutaAvatar());
+        Jugador jugador = new Jugador(objeto.getNombreJugador(), objeto.getRutaAvatar(),objeto.getPuntaje());
         PipaJugador pj = new PipaJugador();
         pj.pasar(jugador);
     }
