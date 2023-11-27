@@ -278,6 +278,7 @@ public class FrmUnirsePartida extends javax.swing.JFrame {
         jugador.setPreferencia(pref);
         jugador.setColor("#33FF00");
         
+        
         FrmSalaJuego salaJuego = FrmSalaJuego.getInstance();
         if(salaJuego.ejecutarConexion(jugador, ip, Integer.valueOf(port))){
             salaJuego.setVisible(true);

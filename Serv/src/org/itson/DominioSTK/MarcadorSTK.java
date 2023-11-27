@@ -35,7 +35,13 @@ public class MarcadorSTK implements Serializable{
     }
 
     public int getSiguiente() {
-        return siguiente;
+//      return siguiente;
+        this.siguiente++;
+        int siguienteTemporal = this.siguiente;
+        if (this.siguiente == this.jugadores.size()) {
+            this.siguiente = 0;
+        }
+        return siguienteTemporal;
     }
 
     public void setSiguiente(int siguiente) {

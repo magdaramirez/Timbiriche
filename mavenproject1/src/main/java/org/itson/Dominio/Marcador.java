@@ -41,8 +41,9 @@ public class Marcador {
     }
 
     public int getSiguiente() {
-        int siguienteTemporal = this.siguiente;
+//        int siguienteTemporal = this.siguiente;
         this.siguiente++;
+        int siguienteTemporal = this.siguiente;
         if (this.siguiente == this.jugadores.size()) {
             this.siguiente = 0;
         }
