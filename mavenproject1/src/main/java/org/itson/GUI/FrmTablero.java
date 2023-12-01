@@ -198,7 +198,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlFondoTablero.setBackground(new java.awt.Color(255, 255, 255));
-        pnlFondoTablero.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pnlFondoTablero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnlFondoTablero.setMaximumSize(new java.awt.Dimension(650, 650));
         pnlFondoTablero.setMinimumSize(new java.awt.Dimension(650, 650));
         pnlFondoTablero.setPreferredSize(new java.awt.Dimension(650, 650));
@@ -217,7 +217,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         jPanel1.add(pnlFondoTablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 6, -1, -1));
 
         pnlJugador1.setBackground(new java.awt.Color(255, 255, 255));
-        pnlJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pnlJugador1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnlJugador1.setMaximumSize(new java.awt.Dimension(150, 142));
         pnlJugador1.setMinimumSize(new java.awt.Dimension(150, 142));
         pnlJugador1.setPreferredSize(new java.awt.Dimension(150, 142));
@@ -244,7 +244,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         jPanel1.add(pnlJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
         pnlJugador2.setBackground(new java.awt.Color(255, 255, 255));
-        pnlJugador2.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pnlJugador2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnlJugador2.setMaximumSize(new java.awt.Dimension(150, 142));
         pnlJugador2.setMinimumSize(new java.awt.Dimension(150, 142));
 
@@ -262,7 +262,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         jPanel1.add(pnlJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 514, -1, -1));
 
         pnlJugador4.setBackground(new java.awt.Color(255, 255, 255));
-        pnlJugador4.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pnlJugador4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnlJugador4.setMaximumSize(new java.awt.Dimension(150, 142));
         pnlJugador4.setMinimumSize(new java.awt.Dimension(150, 142));
 
@@ -280,7 +280,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         jPanel1.add(pnlJugador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(832, 514, -1, -1));
 
         pnlJugador3.setBackground(new java.awt.Color(255, 255, 255));
-        pnlJugador3.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pnlJugador3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnlJugador3.setMaximumSize(new java.awt.Dimension(150, 142));
         pnlJugador3.setMinimumSize(new java.awt.Dimension(150, 142));
         pnlJugador3.setPreferredSize(new java.awt.Dimension(150, 142));
