@@ -16,6 +16,7 @@ import org.itson.Interfaces.IActu;
 import org.itson.SocketCliente.ClienteJugador;
 import org.itson.Interfaces.IJugador;
 import org.itson.Interfaces.PnlObservador;
+import org.itson.Utils.FormUtils;
 
 /**
  *
@@ -65,6 +66,13 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
 //        }
 //    }
     
+    public void setJugador(Jugador jugador){
+        this.jugador = jugador;
+        sck.enviarAlServidor(this.jugador);
+        this.establecerColores();
+        this.establecerMarcador();
+    }
+    
     private void establecerColores() {
         int index = this.partida.getMarcador().getJugadores().indexOf(this.jugador);
         this.partida.getMarcador().getJugadores().get(index).setColor(this.jugador.getColor());
@@ -112,7 +120,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         for (int i = 0; i < this.partida.getMarcador().getJugadores().size(); i++) {
             switch (i) {
                 case 0:
-                    ((PnlJugador) pnlJugador1.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje()+1);
+                    ((PnlJugador)pnlJugador1.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje()+1);
                     pnlJugador1.revalidate();
                     break;
                 case 1:
@@ -164,7 +172,22 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
     public void setSala(Partida partida) {
         this.partida = partida;
     }
-
+    
+    /**
+     * Método que despliega FrmColor
+     */
+    public void abrirVentanaColores() {
+        FrmColorPartida frmColor = new FrmColorPartida(this.jugador, this);
+        FormUtils.cargarFormSinDispose(frmColor);
+    }
+    
+    /**
+     * Método que termina el programa.
+     */
+    public void salirDelPrograma() {
+        System.exit(0);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -300,6 +323,11 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
 
         btnSalir.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 99, 57));
 
         btnColores.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -318,8 +346,12 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnColoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColoresActionPerformed
-        // TODO add your handling code here:
+        abrirVentanaColores();
     }//GEN-LAST:event_btnColoresActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        salirDelPrograma();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnColores;

@@ -6,6 +6,8 @@ package org.itson.GUI;
 
 import java.awt.Color;
 import javax.swing.JPanel;
+import org.itson.Dominio.Jugador;
+import org.itson.Utils.FormUtils;
 
 /**
  *
@@ -13,11 +15,18 @@ import javax.swing.JPanel;
  */
 public class FrmAvatars extends javax.swing.JFrame {
 
+    private FrmSalaJuego sala;
+    private Jugador jugador;
+
     /**
      * Creates new form FrmAvatars
+     * @param jugador
+     * @param sala
      */
-    public FrmAvatars() {
+    public FrmAvatars(Jugador jugador, FrmSalaJuego sala) {
         initComponents();
+        this.jugador = jugador;
+        this.sala = sala;
     }
 
     /**
@@ -44,6 +53,16 @@ public class FrmAvatars extends javax.swing.JFrame {
         FrmSalaJuego frmSalaJuego = new FrmSalaJuego();
         frmSalaJuego.setVisible(true);
         dispose();
+    }
+
+    /**
+     * Metodo que establece el avatar del jugador.
+     *
+     * @param avatar
+     * @param nombreAvatar
+     */
+    private void establecerAvatar(String nombreAvatar) {
+        this.jugador.setRutaAvatar(nombreAvatar);
     }
 
     /**
@@ -84,36 +103,76 @@ public class FrmAvatars extends javax.swing.JFrame {
 
         btnCangrejo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cangrejo.png"))); // NOI18N
         btnCangrejo.setBorder(null);
+        btnCangrejo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCangrejoActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnCangrejo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 85, 85));
 
         btnElefante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/elefante.png"))); // NOI18N
         btnElefante.setToolTipText("");
         btnElefante.setBorder(null);
+        btnElefante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnElefanteActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnElefante, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 85, 85));
 
         btnHamster.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/hamster.png"))); // NOI18N
         btnHamster.setToolTipText("");
         btnHamster.setBorder(null);
+        btnHamster.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHamsterActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnHamster, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 85, 85));
 
         btnGato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gato.png"))); // NOI18N
         btnGato.setBorder(null);
+        btnGato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGatoActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnGato, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 85, 85));
 
         btnPerro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/perro.png"))); // NOI18N
         btnPerro.setBorder(null);
+        btnPerro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPerroActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnPerro, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 85, 85));
 
         btnPollo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pollo.png"))); // NOI18N
         btnPollo.setBorder(null);
+        btnPollo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPolloActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnPollo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 85, 85));
 
         btnPulpo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pulpo.png"))); // NOI18N
         btnPulpo.setBorder(null);
+        btnPulpo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPulpoActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnPulpo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 85, 85));
 
         btnTortuga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/tortuga.png"))); // NOI18N
         btnTortuga.setBorder(null);
+        btnTortuga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTortugaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnTortuga, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 85, 85));
 
         pnlHeader.setBackground(new java.awt.Color(255, 255, 255));
@@ -222,16 +281,49 @@ public class FrmAvatars extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlRegresarMouseEntered
 
     private void pnlRegresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRegresarMouseExited
-      cambiarColorPanel(pnlRegresar, Color.WHITE);
+        cambiarColorPanel(pnlRegresar, Color.WHITE);
     }//GEN-LAST:event_pnlRegresarMouseExited
 
     private void pnlRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRegresarMouseClicked
-    regresarVentanaSalaJuego();
+        regresarVentanaSalaJuego();
     }//GEN-LAST:event_pnlRegresarMouseClicked
 
     private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
-        // TODO add your handling code here:
+        this.sala.setJugador(this.jugador);
+        FormUtils.dispose( this);
     }//GEN-LAST:event_btnListoActionPerformed
+
+    private void btnCangrejoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCangrejoActionPerformed
+        this.establecerAvatar("cangrejo.png");
+    }//GEN-LAST:event_btnCangrejoActionPerformed
+
+    private void btnElefanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElefanteActionPerformed
+        this.establecerAvatar("elefante.png");
+    }//GEN-LAST:event_btnElefanteActionPerformed
+
+    private void btnHamsterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHamsterActionPerformed
+        this.establecerAvatar("hamster.png");
+    }//GEN-LAST:event_btnHamsterActionPerformed
+
+    private void btnGatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGatoActionPerformed
+        this.establecerAvatar("gato.png");
+    }//GEN-LAST:event_btnGatoActionPerformed
+
+    private void btnPerroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerroActionPerformed
+        this.establecerAvatar("perro.png");
+    }//GEN-LAST:event_btnPerroActionPerformed
+
+    private void btnPolloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPolloActionPerformed
+        this.establecerAvatar("pollo.png");
+    }//GEN-LAST:event_btnPolloActionPerformed
+
+    private void btnPulpoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPulpoActionPerformed
+        this.establecerAvatar("pulpo.png");
+    }//GEN-LAST:event_btnPulpoActionPerformed
+
+    private void btnTortugaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTortugaActionPerformed
+        this.establecerAvatar("tortuga.png");
+    }//GEN-LAST:event_btnTortugaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCangrejo;

@@ -70,16 +70,16 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
      * Método que despliega FrmAvatars
      */
     public void abrirVentanaAvatars() {
-        FrmAvatars frmAvatars = null;
-        FormUtils.cargarForm(frmAvatars, this);
+        FrmAvatars frmAvatars = new FrmAvatars(this.jugador, this);
+        FormUtils.cargarFormSinDispose(frmAvatars);
     }
 
     /**
      * Método que despliega FrmColor
      */
     public void abrirVentanaColores() {
-        FrmColor frmColor = null;
-        FormUtils.cargarForm(frmColor, this);
+        FrmColor frmColor = new FrmColor(this.jugador, this);
+        FormUtils.cargarFormSinDispose(frmColor);
     }
     
     /**
@@ -94,7 +94,12 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
         }
         return instance;
     }
-
+    
+    public void setJugador(Jugador jugador){
+        this.jugador = jugador;
+        sck.enviarAlServidor(this.jugador);
+    }
+    
     public boolean ejecutarConexion(Jugador jugador, String ip, int port) {
         this.jugador = jugador;
 

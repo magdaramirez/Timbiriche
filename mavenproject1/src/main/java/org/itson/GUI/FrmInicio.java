@@ -197,9 +197,7 @@ public class FrmInicio extends javax.swing.JFrame {
     private void btnCrearPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearPartidaActionPerformed
         String ip = null, port = null;
 
-        ip = JOptionPane.showInputDialog(this, "Dirección IP", "¿A donde te quieres conectar?", JOptionPane.OK_CANCEL_OPTION);
-        port = JOptionPane.showInputDialog(this, "Puerto", "¿A donde quieres llegar?", JOptionPane.OK_CANCEL_OPTION);
-        
+        port = JOptionPane.showInputDialog(this, "Puerto", "Ingresa el código de puerto", JOptionPane.OK_CANCEL_OPTION);
         Jugador jugador = new Jugador("Jugador 1", "perro.png");
         Preferencia pref = new Preferencia("#0099FF", "#FF3399", "#FFFF33");
         jugador.setPreferencia(pref);

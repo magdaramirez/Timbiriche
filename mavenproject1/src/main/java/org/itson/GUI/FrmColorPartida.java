@@ -13,18 +13,20 @@ import org.itson.Utils.FormUtils;
  *
  * @author magda
  */
-public class FrmColor extends javax.swing.JFrame {
+public class FrmColorPartida extends javax.swing.JFrame {
     
-    private FrmSalaJuego sala;
+    private FrmTablero tablero;
     private Jugador jugador;
     
     /**
      * Creates new form FrmColor
+     * @param jugador
+     * @param tablero
      */
-    public FrmColor(Jugador jugador, FrmSalaJuego sala) {
+    public FrmColorPartida(Jugador jugador, FrmTablero tablero) {
         initComponents();
         this.jugador = jugador;
-        this.sala = sala;
+        this.tablero = tablero;
     }
 
     /**
@@ -329,7 +331,7 @@ public class FrmColor extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlSalirMouseExited
 
     private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
-        this.sala.setJugador(this.jugador);
+        this.tablero.setJugador(this.jugador);
         FormUtils.dispose( this);
     }//GEN-LAST:event_btnListoActionPerformed
 
