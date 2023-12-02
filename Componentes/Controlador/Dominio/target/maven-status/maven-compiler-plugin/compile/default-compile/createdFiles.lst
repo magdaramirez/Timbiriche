@@ -1,0 +1,11 @@
+org\itson\Dominio\Cuadro.class
+org\itson\Dominio\Forma.class
+org\itson\Dominio\Tablero.class
+org\itson\Dominio\Preferencia.class
+org\itson\Dominio\CasillaJugador.class
+org\itson\Dominio\Marcador.class
+org\itson\Dominio\Jugador.class
+org\itson\Dominio\Posicion.class
+org\itson\Dominio\Linea.class
+org\itson\Dominio\Partida.class
+org\itson\Dominio\Punto.class
