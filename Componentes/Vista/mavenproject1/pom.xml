@@ -28,5 +28,10 @@
             <artifactId>Dominio</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>1</groupId>
+            <artifactId>SocketCliente</artifactId>
+            <version>1</version>
+        </dependency>
     </dependencies>
 </project>
