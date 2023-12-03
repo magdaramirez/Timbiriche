@@ -12,6 +12,7 @@ import org.itson.Dominio.Marcador;
 import org.itson.Dominio.Partida;
 import org.itson.Dominio.Tablero;
 import java.util.List;
+import javax.swing.JOptionPane;
 import org.itson.Interfaces.IActu;
 import org.itson.SocketCliente.ClienteJugador;
 import org.itson.Interfaces.IJugador;
@@ -51,7 +52,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         Tablero tablero = new Tablero(marcador.getJugadores().size());
         this.partida = new Partida(marcador, tablero, marcador.getJugadores().size());
         System.out.println(this.partida.toString());
-        
+
         establecerColores();
 //        establecerNombres();
         establecerMarcador();
@@ -65,14 +66,13 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
 //            numeroJugador += 1;
 //        }
 //    }
-    
-    public void setJugador(Jugador jugador){
+    public void setJugador(Jugador jugador) {
         this.jugador = jugador;
         sck.enviarAlServidor(this.jugador);
         this.establecerColores();
         this.establecerMarcador();
     }
-    
+
     private void establecerColores() {
         int index = this.partida.getMarcador().getJugadores().indexOf(this.jugador);
         this.partida.getMarcador().getJugadores().get(index).setColor(this.jugador.getColor());
@@ -80,7 +80,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         int indicador = 0;
         for (int i = 0; i < this.partida.getMarcador().getJugadores().size(); i++) {
             if (!this.partida.getMarcador().getJugadores().get(i).equals(this.jugador)) {
-                if(indicador==0){
+                if (indicador == 0) {
                     this.partida.getMarcador().getJugadores().get(i).setColor(this.jugador.getPreferencia().getColores().get(indicador));
                 }
                 indicador++;
@@ -120,19 +120,19 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         for (int i = 0; i < this.partida.getMarcador().getJugadores().size(); i++) {
             switch (i) {
                 case 0:
-                    ((PnlJugador)pnlJugador1.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje()+1);
+                    ((PnlJugador) pnlJugador1.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje() + 1);
                     pnlJugador1.revalidate();
                     break;
                 case 1:
-                    ((PnlJugador) pnlJugador2.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje()+1);
+                    ((PnlJugador) pnlJugador2.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje() + 1);
                     pnlJugador2.revalidate();
                     break;
                 case 2:
-                    ((PnlJugador) pnlJugador3.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje()+1);
+                    ((PnlJugador) pnlJugador3.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje() + 1);
                     pnlJugador3.revalidate();
                     break;
                 case 3:
-                    ((PnlJugador) pnlJugador4.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje()+1);
+                    ((PnlJugador) pnlJugador4.getComponent(0)).setPuntaje(marcador.getJugadores().get(i).getPuntaje() + 1);
                     pnlJugador4.revalidate();
                     break;
                 default:
@@ -172,7 +172,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
     public void setSala(Partida partida) {
         this.partida = partida;
     }
-    
+
     /**
      * Método que despliega FrmColor
      */
@@ -180,14 +180,30 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         FrmColorPartida frmColor = new FrmColorPartida(this.jugador, this);
         FormUtils.cargarFormSinDispose(frmColor);
     }
-    
+
     /**
      * Método que termina el programa.
      */
     public void salirDelPrograma() {
         System.exit(0);
     }
-    
+
+    /**
+     * Método que despliega FrmAvatars
+     */
+    public void abrirResultados() {
+        int n = JOptionPane.showConfirmDialog(
+                null, "¿Desea finalizar el juego?",
+                "Finalizar Timbiriche",
+                JOptionPane.YES_NO_OPTION);
+        if (n == JOptionPane.YES_OPTION) {
+            FrmResultados frmResultados = new FrmResultados();
+            frmResultados.setVisible(true);
+            dispose();
+        }
+
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -322,7 +338,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
         jPanel1.add(pnlJugador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(832, 6, -1, -1));
 
         btnSalir.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnSalir.setText("Salir");
+        btnSalir.setText("Finalizar");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
@@ -350,7 +366,7 @@ public class FrmTablero extends javax.swing.JFrame implements PnlObservador, IAc
     }//GEN-LAST:event_btnColoresActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        salirDelPrograma();
+        abrirResultados();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

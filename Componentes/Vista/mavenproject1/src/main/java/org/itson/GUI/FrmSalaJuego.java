@@ -21,7 +21,7 @@ import org.itson.Utils.FormUtils;
  * @author march
  */
 public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
-    
+
     private Jugador jugador;
     private String ip;
     private int port;
@@ -30,7 +30,7 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
     private IJugador sck;
 
     private int jugadoresDibujados = 0;
-    
+
     /**
      * Creates new form FrmSalaJuego
      */
@@ -62,8 +62,9 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
      * Método que despliega FrmInicio
      */
     public void regresarVentanaInicio() {
-        FrmInicio frmInicio = null;
-        FormUtils.cargarForm(frmInicio, this);
+        FrmInicio frmInicio = new FrmInicio();
+        frmInicio.setVisible(true);
+        dispose();
     }
 
     /**
@@ -81,7 +82,7 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
         FrmColor frmColor = new FrmColor(this.jugador, this);
         FormUtils.cargarFormSinDispose(frmColor);
     }
-    
+
     /**
      * Metodo para obtener una instancia única de SalaEspera, si la instancia no
      * ha sido creada, la instancia y la retorna.
@@ -94,12 +95,12 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
         }
         return instance;
     }
-    
-    public void setJugador(Jugador jugador){
+
+    public void setJugador(Jugador jugador) {
         this.jugador = jugador;
         sck.enviarAlServidor(this.jugador);
     }
-    
+
     public boolean ejecutarConexion(Jugador jugador, String ip, int port) {
         this.jugador = jugador;
 
@@ -151,6 +152,7 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
             }
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -190,6 +192,7 @@ public class FrmSalaJuego extends javax.swing.JFrame implements IActu {
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(922, 582));
         setMinimumSize(new java.awt.Dimension(922, 582));
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

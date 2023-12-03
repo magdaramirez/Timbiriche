@@ -6,6 +6,7 @@ package org.itson.GUI;
 
 import java.awt.Color;
 import javax.swing.JPanel;
+import org.itson.Dominio.Partida;
 
 /**
  *
@@ -13,11 +14,24 @@ import javax.swing.JPanel;
  */
 public class FrmResultados extends javax.swing.JFrame {
 
+    private Partida partida;
     /**
      * Creates new form FrmResultados
      */
     public FrmResultados() {
-        initComponents();
+         initComponents();
+
+        this.setResizable(false);
+        setTitle("Resultados");
+        this.partida.getMarcador().getJugadores();
+        setVisible(true);
+        String formato = "";
+
+        for (int i = 0; i < this.partida.getMarcador().getJugadores().size(); i++) {
+            formato = formato + "\n           " + (i + 1) + "                                          "  + this.partida.getMarcador().getJugadores() + "\n";
+
+        }
+        txtResultados.setText(formato);
     }
 
     /**
@@ -63,6 +77,8 @@ public class FrmResultados extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtResultados = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -147,6 +163,10 @@ public class FrmResultados extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jButton1.setText("Reiniciar Partida");
 
+        txtResultados.setColumns(20);
+        txtResultados.setRows(5);
+        jScrollPane1.setViewportView(txtResultados);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -159,7 +179,10 @@ public class FrmResultados extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(370, 370, 370)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -168,7 +191,9 @@ public class FrmResultados extends javax.swing.JFrame {
                 .addComponent(pnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 410, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
         );
@@ -208,9 +233,11 @@ public class FrmResultados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblRegresar;
     private javax.swing.JPanel pnlHeader;
     private javax.swing.JPanel pnlRegresar;
     private javax.swing.JPanel pnlSalir;
+    private javax.swing.JTextArea txtResultados;
     // End of variables declaration//GEN-END:variables
 }

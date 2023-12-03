@@ -1,21 +1,21 @@
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmSalaJuego.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\SocketCliente\ClienteJugador.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Utils\UtilesTablero.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmAvatars.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmColor.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmUnirsePartida.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Interfaces\PnlObservable.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Interfaces\PnlObservador.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmOrdenJugadores.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmResultados.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Interfaces\IJugador.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\timbiriche\Principal.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmColorPartida.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmInicio.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Utils\FormaPolygon.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Utils\FormUtils.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\SocketCliente\SocketJugador.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Interfaces\IActu.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmTablero.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\PnlJugador.java
-C:\Users\koine\Documents\1 Copia TIMBIRICHE\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\PnlTablero.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Utils\UtilesTablero.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\timbiriche\Principal.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Interfaces\IJugador.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\PnlTablero.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\SocketCliente\ClienteJugador.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmTablero.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Interfaces\PnlObservador.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Utils\FormUtils.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmColor.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmInicio.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmSalaJuego.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmOrdenJugadores.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\PnlJugador.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\SocketCliente\SocketJugador.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Interfaces\IActu.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmColorPartida.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmResultados.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Utils\FormaPolygon.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\Interfaces\PnlObservable.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmAvatars.java
+C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Vista\mavenproject1\src\main\java\org\itson\GUI\FrmUnirsePartida.java
