@@ -1,29 +1,29 @@
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Comandos\RetirarJugador.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Comandos\AsignarLinea.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Comandos\InvocarPanel.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\FiltroCuadro.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Comandos\CrearJuegoPanel.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaJugadores.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaMarcador.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Comandos\IJuegoPipa.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\FiltroMarcador.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaLineasSTK.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\Pipa.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\IJuego.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaLineas.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaJugadoresSTK.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaJugador.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaSize.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\SRep.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaCuadroSTK.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaJugadorSTK.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\FiltroLineas.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaSala.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\Filtro.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\IRepositorio.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Repositorio.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaCuadro.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Comandos\AsignarCuadro.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\FiltroJugadores.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\FiltroSala.java
-C:\Users\magda\OneDrive\Documentos\GitHub\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\FiltroJugador.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaJugadores.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Comandos\InvocarPanel.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaJugadorSTK.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Comandos\CrearJuegoPanel.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Comandos\AsignarLinea.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaSize.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Comandos\AsignarCuadro.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaLineasSTK.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\FiltroLineas.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\Pipa.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaJugador.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaJugadoresSTK.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\FiltroSala.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\FiltroJugadores.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Repositorio.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaLineas.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\FiltroCuadro.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\IRepositorio.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaMarcador.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaSala.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\FiltroJugador.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaCuadro.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Comandos\IJuegoPipa.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\Filtro.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\SRep.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Comandos\RetirarJugador.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Pipas\PipaCuadroSTK.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\IJuego.java
+D:\Galería\Documentos_2\Arqui Final\Timbiriche\Componentes\Modelo\PipesAndFilters\src\main\java\org\itson\pipesandfilters\Filtros\FiltroMarcador.java

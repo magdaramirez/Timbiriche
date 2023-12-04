@@ -64,4 +64,10 @@ public class Repositorio implements IRepositorio{
     public int obtenerTurnoSiguiente() {
         return sr.obtenerTurnoSiguiente();
     }
+    
+    
+    public void retirarJugador(Jugador jugador) {
+         sr.retirarJugador(jugador);
+    }
+    
 }
